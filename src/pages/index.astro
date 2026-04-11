@@ -1,0 +1,106 @@
+---
+import Header from "../components/Header.astro";
+import Sidebar from "../components/Sidebar.astro";
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+
+<!DOCTYPE html>
+<html>
+  <Header title="Lance Atendido" />
+  <body>
+    <div class="content">
+      <Sidebar selectedItem="home" />
+      <nav class="main">
+        <div class="container">
+          <main class="fold-content-container">
+            <div class="fold-content">
+              <h1>Hi, I'm Lance.<br />I build things for software.</h1>
+              <p class="lead">
+                IT student at MMCL specializing in backend development. Skilled in Python, C#, C++, Dart, REST APIs, and database systems. Passionate about building reliable, efficient software and eager to apply my skills through hands-on OJT experience.
+              </p>
+            </div>
+            <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+              <a href={`${base}/assets/Atendido_Resume.pdf`} download class="button w-button">Download Resume</a>
+            </div>
+          </main>
+          <div class="projects-section">
+            <a href={`${base}/skills/`} class="projects-container">
+              <div class="single-projects-category">
+                <div class="projects-category-image-container">
+                  <img src={`${base}/assets/skills-icon.png`} loading="lazy" alt="Skills" class="projects-category-image" />
+                </div>
+              </div>
+              <div class="single-projects-content">
+                <h4>Skills</h4>
+                <div class="tech-tools-container">
+                  <div class="mini-label-white gray-color">Technologies &amp; tools</div>
+                  <div class="chips-container chips-container-small-width">
+                    <div class="single-chip small-chip">Python</div>
+                    <div class="single-chip small-chip">C#</div>
+                    <div class="single-chip small-chip">C++</div>
+                    <div class="single-chip small-chip">Dart</div>
+                    <div class="single-chip small-chip">REST API</div>
+                    <div class="single-chip small-chip">CRUD</div>
+                    <div class="single-chip small-chip">MySQL</div>
+                    <div class="single-chip small-chip">Oracle SQL</div>
+                    <div class="single-chip small-chip">PHP</div>
+                    <div class="single-chip small-chip">Flutter</div>
+                    <div class="single-chip small-chip">HTML</div>
+                    <div class="single-chip small-chip">JavaScript</div>
+                    <div class="single-chip small-chip">JSON</div>
+                    <div class="single-chip small-chip">GitHub</div>
+                  </div>
+                </div>
+              </div>
+            </a>
+            <a href={`${base}/achievements/`} class="projects-container">
+              <div class="single-projects-category">
+                <div class="projects-category-image-container devops-img">
+                  <img src={`${base}/assets/achievements-icon.png`} loading="lazy" alt="Achievements" class="projects-category-image" />
+                </div>
+              </div>
+              <div class="single-projects-content">
+                <h4>Achievements &amp;&nbsp;Certifications</h4>
+                <div class="tech-tools-container">
+                  <div class="mini-label-white gray-color">Honors &amp; certifications</div>
+                  <div class="chips-container chips-container-small-width">
+                    <div class="single-chip small-chip">Hackathon 1st Place</div>
+                    <div class="single-chip small-chip">Dean's Lister</div>
+                    <div class="single-chip small-chip">TOEIC 805/990</div>
+                    <div class="single-chip small-chip">CCNA</div>
+                    <div class="single-chip small-chip">Ethical Hacking</div>
+                    <div class="single-chip small-chip">CompTIA Tech+</div>
+                    <div class="single-chip small-chip">Google Cloud</div>
+                    <div class="single-chip small-chip">Python (CodeChum)</div>
+                    <div class="single-chip small-chip">Blockchain</div>
+                  </div>
+                </div>
+              </div>
+            </a>
+            <a href={`${base}/personal-projects/`} class="projects-container">
+              <div class="single-projects-category">
+                <div class="projects-category-image-container">
+                  <img src={`${base}/assets/project-icon.png`} loading="lazy" alt="Projects" class="projects-category-image" style="filter: invert(1) brightness(2);" />
+                </div>
+              </div>
+              <div class="single-projects-content">
+                <h4>Projects</h4>
+                <div class="tech-tools-container">
+                  <div class="mini-label-white gray-color">Featured projects</div>
+                  <div class="chips-container chips-container-small-width">
+                    <div class="single-chip small-chip">SapPIIre</div>
+                    <div class="single-chip small-chip">CCIS Tracker</div>
+                    <div class="single-chip small-chip">PokedexCards</div>
+                    <div class="single-chip small-chip">Personify API</div>
+                    <div class="single-chip small-chip">DiceHard</div>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <!--[if lte IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif]-->
+  </body>
+</html>

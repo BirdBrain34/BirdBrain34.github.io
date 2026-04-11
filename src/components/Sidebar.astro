@@ -1,0 +1,91 @@
+---
+const { selectedItem } = Astro.props;
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+
+<aside
+  data-animation="default"
+  data-collapse="medium"
+  data-duration="400"
+  data-easing="ease"
+  data-easing2="ease"
+  role="banner"
+  class="sidebar w-nav"
+>
+  <div class="nav-content">
+    <a href={`${base}/`} class="w-nav-brand" aria-label="home">
+      <div class="niv-data">
+        <img
+          src={`${base}/assets/Atendido.png`}
+          loading="eager"
+          alt="Lance Atendido"
+          class="niv-image"
+          style="border-radius: 0; object-fit: contain; background: transparent;"
+        />
+        <div>
+          <div class="label-white">Lance Atendido</div>
+          <div class="label-gray">IT Student | Backend Developer</div>
+        </div>
+      </div>
+    </a>
+
+    <nav role="navigation" class="w-nav-menu">
+      <a
+        href={`${base}/`}
+        class={`nav-link-container w-inline-block ${selectedItem === 'home' ? 'w--current' : ''}`}
+      >
+        <img src={`${base}/assets/home.svg`} loading="eager" alt="" class="nav-link-image" />
+        <div>About Me</div>
+      </a>
+
+      <a
+        href={`${base}/skills/`}
+        class={`nav-link-container w-inline-block ${selectedItem === 'skills' ? 'w--current' : ''}`}
+        aria-current={selectedItem === 'skills' ? 'page' : undefined}
+      >
+        <img src={`${base}/assets/skills-icon.png`} loading="eager" alt="" class="nav-link-image" />
+        <div>Skills</div>
+      </a>
+
+      <a
+        href={`${base}/achievements/`}
+        class={`nav-link-container w-inline-block ${selectedItem === 'achievements' ? 'w--current' : ''}`}
+      >
+        <img src={`${base}/assets/achievements-icon.png`} loading="eager" alt="" class="nav-link-image" />
+        <div>Achievements</div>
+      </a>
+
+      <a
+        href={`${base}/personal-projects/`}
+        class={`nav-link-container w-inline-block ${selectedItem === 'personal-projects' ? 'w--current' : ''}`}
+      >
+        <img src={`${base}/assets/project-icon.png`} loading="eager" alt="" class="nav-link-image" style="filter: invert(1) brightness(2);" />
+        <div>Projects</div>
+      </a>
+    </nav>
+
+    <div
+      class="navbar-icon-button w-nav-button"
+      style="-webkit-user-select: text;"
+      aria-label="menu"
+      role="button"
+      tabindex="0"
+    >
+      <img src={`${base}/assets/menu.svg`} loading="eager" alt="" class="navbar-icon" />
+    </div>
+  </div>
+
+  <script>
+    import { setupNav } from '../scripts/nav.js';
+
+    let cleanup;
+    document.addEventListener('astro:page-load', () => {
+      if (cleanup) cleanup();
+      cleanup = setupNav();
+    });
+
+    document.addEventListener('astro:before-swap', () => {
+      if (cleanup) cleanup();
+    });
+  </script>
+</aside>

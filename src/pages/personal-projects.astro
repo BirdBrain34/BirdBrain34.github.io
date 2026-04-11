@@ -1,0 +1,100 @@
+---
+import Header from '../components/Header.astro';
+import Project from '../components/Project.astro';
+import Sidebar from '../components/Sidebar.astro';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const projects = [
+  {
+    title: "SapPIIre — Secured Autofill System",
+    date: "Ongoing",
+    github: "https://github.com/BitACDC/SapPIIre",
+    desc: [
+      "Developed backend infrastructure for a mobile application that uses QR codes to securely store and transmit user PII to online forms",
+      "Built a backend authentication system with encrypted password storage to protect sensitive user data",
+      "Designed and structured a relational database for storing and managing user PII with proper security constraints",
+      "Implemented QR-triggered PII transfer from the mobile app to a live web session"
+    ],
+    tech: ["Dart", "Flutter", "HTML", "MySQL"]
+  },
+  {
+    title: "CCIS House Attendance Tracker of 2024",
+    date: "August 12, 2024",
+    github: "https://github.com/jp-gerona/it115l-final-project",
+    desc: [
+      "Developed a web application management system for processing CCIS student records during CCIS Week 2024",
+      "Built the API layer connecting the Attendance database to the web application with full CRUD functionality",
+      "Managed student attendance, student list, and player list modules",
+      "Implemented a Population chart accurately displaying the number of members per house"
+    ],
+    tech: ["HTML", "JavaScript", "CSS", "React", "Node.js", "Oracle SQL", "REST API"]
+  },
+  {
+    title: "PokedexCards",
+    date: "July 19, 2024",
+    github: "https://github.com/BirdBrain34/PokedexCards",
+    desc: [
+      "Built a mobile application that tracks and displays a user's Pokémon card collection",
+      "Connected the mobile frontend to a backend, implementing REST API calls to fetch, get, and post card data",
+      "Developed filtering by rarity and set, and search functionality for Pokémon cards",
+      "Designed the backend database structure for card storage using PHP and XAMPP"
+    ],
+    tech: ["C#", "PHP", "XAMPP", "REST API"]
+  },
+  {
+    title: "Personify (TwitterCloneAPI)",
+    date: "February 12, 2024",
+    github: "https://github.com/BitACDC/Personify",
+    desc: [
+      "Developed a Twitter clone themed around 'Persona', utilizing a REST API for all core social features",
+      "Implemented sign-up, login, tweet posting, liking, and following functionalities via API calls",
+      "Collaborated using GitHub for version control and team-based development workflow",
+      "Data stored and retrieved via JSON, simulating real-world client-server communication"
+    ],
+    tech: ["HTML", "JavaScript", "CSS", "Node.js", "REST API", "JSON", "GitHub"]
+  },
+  {
+    title: "DiceHard",
+    date: "January 20, 2024",
+    github: "https://github.com/BirdBrain34/DiceHard",
+    desc: [
+      "Built a dice-based roguelike game where movement, attacks, and skills are all determined by dice rolls — emphasizing resource management and strategic gameplay",
+      "Developed player and enemy stat systems, skill mechanics, and the core gameplay loop in C#",
+      "Implemented game logic inspired by resource management mechanics from various RPG titles"
+    ],
+    tech: ["C#"]
+  }
+];
+---
+
+<!DOCTYPE html>
+<html>
+  <Header title="Projects | Lance Atendido" />
+  <body>
+    <div class="content">
+      <Sidebar selectedItem="personal-projects" />
+      <nav class="main">
+        <div class="container">
+          <div class="back-nav-container">
+            <a href={`${base}/`} class="back-nav-button w-inline-block">
+              <img src={`${base}/assets/back.svg`} loading="lazy" alt="" class="back-nav-img" />
+              <div>Back</div>
+            </a>
+          </div>
+          <div class="content-container">
+            <h1>Projects</h1>
+            {projects.map((project) => (
+              <Project
+                title={project.title}
+                date={project.date}
+                desc={project.desc}
+                tech={project.tech}
+                github={project.github}
+              />
+            ))}
+          </div>
+        </div>
+      </nav>
+    </div>
+    <!--[if lte IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif]-->
+  </body>
+</html>

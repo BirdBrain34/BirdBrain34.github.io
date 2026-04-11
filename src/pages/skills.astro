@@ -1,0 +1,86 @@
+---
+import Header from "../components/Header.astro";
+import Project from "../components/Project.astro";
+import Sidebar from "../components/Sidebar.astro";
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+<!DOCTYPE html>
+<html>
+  <Header title="Skills | Lance Atendido" />
+  <body>
+    <div class="content">
+      <Sidebar selectedItem="skills" />
+      <nav class="main">
+        <div class="container">
+          <div class="back-nav-container">
+            <a href={`${base}/`} class="back-nav-button w-inline-block">
+              <img src={`${base}/assets/back.svg`} loading="lazy" alt="" class="back-nav-img" />
+              <div>Back</div>
+            </a>
+          </div>
+          <div class="content-container">
+            <h1>Skills</h1>
+
+            <section class="items-container">
+              <h3>Programming Languages</h3>
+              <div class="chips-container" style="margin-top: 12px;">
+                <div class="single-chip">Python</div>
+                <div class="single-chip">C#</div>
+                <div class="single-chip">C++</div>
+                <div class="single-chip">PHP</div>
+                <div class="single-chip">Dart</div>
+                <div class="single-chip">HTML</div>
+                <div class="single-chip">JavaScript</div>
+                <div class="single-chip">CSS</div>
+              </div>
+            </section>
+
+            <section class="items-container">
+              <h3>Backend Development</h3>
+              <div class="chips-container" style="margin-top: 12px;">
+                <div class="single-chip">REST API Integration</div>
+                <div class="single-chip">CRUD Operations</div>
+                <div class="single-chip">JSON Handling</div>
+                <div class="single-chip">Client–Server Communication</div>
+                <div class="single-chip">Authentication &amp; Encryption</div>
+              </div>
+            </section>
+
+            <section class="items-container">
+              <h3>Database Management</h3>
+              <div class="chips-container" style="margin-top: 12px;">
+                <div class="single-chip">MySQL</div>
+                <div class="single-chip">Oracle SQL</div>
+                <div class="single-chip">Table Relationships &amp; Normalization</div>
+                <div class="single-chip">Foreign Keys &amp; Constraints</div>
+                <div class="single-chip">Triggers</div>
+                <div class="single-chip">Stored Procedures</div>
+              </div>
+            </section>
+
+            <section class="items-container">
+              <h3>Frameworks &amp; Platforms</h3>
+              <div class="chips-container" style="margin-top: 12px;">
+                <div class="single-chip">Flutter</div>
+                <div class="single-chip">React</div>
+                <div class="single-chip">Node.js</div>
+              </div>
+            </section>
+
+            <section class="items-container">
+              <h3>Tools &amp; Others</h3>
+              <div class="chips-container" style="margin-top: 12px;">
+                <div class="single-chip">GitHub</div>
+                <div class="single-chip">Git</div>
+                <div class="single-chip">Visual Studio</div>
+                <div class="single-chip">VS Code</div>
+                <div class="single-chip">XAMPP</div>
+              </div>
+            </section>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <!--[if lte IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif]-->
+  </body>
+</html>
