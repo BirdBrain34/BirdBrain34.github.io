@@ -56,6 +56,21 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
       </a>
 
       <a
+        href={`${base}/experience/`}
+        class={`nav-link-container w-inline-block ${selectedItem === 'experience' ? 'w--current' : ''}`}
+        aria-current={selectedItem === 'experience' ? 'page' : undefined}
+      >
+        <img
+          src={`${base}/assets/experience.png`}
+          loading="eager"
+          alt=""
+                  class="nav-link-image experience-nav-icon"
+                  style="width: 24px; height: 24px; object-fit: contain;"
+        />
+        <div>Experience</div>
+      </a>
+
+      <a
         href={`${base}/personal-projects/`}
         class={`nav-link-container w-inline-block ${selectedItem === 'personal-projects' ? 'w--current' : ''}`}
       >

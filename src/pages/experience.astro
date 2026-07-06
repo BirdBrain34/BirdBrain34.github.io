@@ -1,0 +1,89 @@
+---
+import Header from '../components/Header.astro';
+import Sidebar from '../components/Sidebar.astro';
+import Experience from '../components/Experience.astro';
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+
+<!DOCTYPE html>
+<html>
+  <Header title="Experience & Projects | Lance Atendido" />
+  <body>
+    <div class="content">
+      <Sidebar selectedItem="experience" />
+      <nav class="main">
+        <div class="container">
+          <div class="back-nav-container">
+            <a href={`${base}/`} class="back-nav-button w-inline-block">
+              <img src={`${base}/assets/back.svg`} loading="lazy" alt="" class="back-nav-img" />
+              <div>Back</div>
+            </a>
+          </div>
+
+          <div class="content-container">
+            <h1>Experience</h1>
+
+            <section style="margin-top: 24px;">
+              <div
+                class="single-item"
+                style="
+                  margin-bottom: 0;
+                  border: 1px solid rgba(255,255,255,0.12);
+                  border-radius: 14px;
+                  padding: 18px 18px;
+                  background: rgba(0,0,0,0.18);
+                  -webkit-backdrop-filter: blur(6px);
+                  backdrop-filter: blur(6px);
+                  box-shadow: 0 0 0 1px rgba(255,255,255,0.04), 0 10px 30px rgba(0,0,0,0.35);
+                "
+              >
+                <div
+                  style="
+                    color: #a8a8a8;
+                    font-family: IBM Plex Mono, sans-serif;
+                    font-size: 12px;
+                    letter-spacing: 0.75px;
+                    text-transform: uppercase;
+                    margin-bottom: 10px;
+                  "
+                >
+                  OJT / Internship
+                </div>
+
+                <div style="color: #fff; font-size: 22px; line-height: 28px; font-weight: 400; margin-bottom: 6px;">
+                  AR Game Developer Intern
+                  <span style="color: #a8a8a8; font-weight: 300;">• PurpleBug Inc.</span>
+                </div>
+
+                <div class="project-desc" style="margin-bottom: 6px; color: #a8a8a8;">
+                  Core Engine:
+                  <span style="color: #fff; font-weight: 500;">Effect House (TikTok AR)</span>
+                </div>
+
+                <div class="project-desc" style="margin-bottom: 0; color: #a8a8a8;">
+                  Focus: Interactive AR Filters, Audio DSP, &amp; Gamified Face/Body Tracking Experiences
+                </div>
+
+                <div class="chips-container" style="margin-top: 18px;">
+                  <div class="single-chip small-chip">Effect House (TikTok AR)</div>
+                  <div class="single-chip small-chip">AR Filter/Game Logic</div>
+                  <div class="single-chip small-chip">Tracking & Interaction</div>
+                  <div class="single-chip small-chip">Performance Optimization</div>
+                  <div class="single-chip small-chip">Audio-Driven Effects</div>
+                </div>
+              </div>
+            </section>
+
+            <section class="mt-6 sm:mt-8">
+              <Experience />
+            </section>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <script>
+      import '../scripts/chips.js';
+    </script>
+  </body>
+</html>

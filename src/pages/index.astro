@@ -15,9 +15,16 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
           <main class="fold-content-container">
             <div class="fold-content">
               <h1>Hi, I'm Lance.<br />I build things for software.</h1>
-              <p class="lead">
-                IT student at MMCL specializing in backend development. Skilled in Python, C#, C++, Dart, REST APIs, and database systems. Passionate about building reliable, efficient software and eager to apply my skills through hands-on OJT experience.
-              </p>
+              <div
+                style="margin-top: 14px; border: 1px solid rgba(255,255,255,0.10); background: rgba(15,16,20,0.60); border-radius: 16px; padding: 10px 12px; box-shadow: 0 0 0 1px rgba(255,255,255,0.03); width: fit-content;"
+              >
+                <p
+                  class="lead"
+                  style="margin: 0; text-align: justify; text-justify: inter-word;"
+                >
+                  IT student at MMCL specializing in backend development. Skilled in Python, C#, C++, Dart, REST APIs, and database systems. Passionate about building reliable, efficient software and eager to apply my skills through hands-on OJT experience.
+                </p>
+              </div>
             </div>
             <div style="display: flex; gap: 12px; flex-wrap: wrap;">
               <a href={`${base}/assets/Atendido_Resume.pdf`} download class="button w-button">Download Resume</a>
@@ -33,7 +40,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
               <div class="single-projects-content">
                 <h4>Skills</h4>
                 <div class="tech-tools-container">
-                  <div class="mini-label-white gray-color">Technologies &amp; tools</div>
+                  <div class="mini-label-white gray-color">Technologies & tools</div>
                   <div class="chips-container chips-container-small-width">
                     <div class="single-chip small-chip">Python</div>
                     <div class="single-chip small-chip">C#</div>
@@ -60,9 +67,9 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
                 </div>
               </div>
               <div class="single-projects-content">
-                <h4>Achievements &amp;&nbsp;Certifications</h4>
+                <h4>Achievements &&nbsp;Certifications</h4>
                 <div class="tech-tools-container">
-                  <div class="mini-label-white gray-color">Honors &amp; certifications</div>
+                  <div class="mini-label-white gray-color">Honors & certifications</div>
                   <div class="chips-container chips-container-small-width">
                     <div class="single-chip small-chip">Hackathon 1st Place</div>
                     <div class="single-chip small-chip">Dean's Lister</div>
@@ -97,10 +104,39 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
                 </div>
               </div>
             </a>
+
+            <a href={`${base}/experience/`} class="projects-container">
+              <div class="single-projects-category">
+                <div class="projects-category-image-container">
+                  <img
+                    src={`${base}/assets/experience.png`}
+                    loading="lazy"
+                    alt="Experience"
+                    class="projects-category-image"
+                    style="object-fit: contain; width: 150px; height: 150px;"
+                  />
+                </div>
+              </div>
+              <div class="single-projects-content">
+                <h4>Experience</h4>
+                <div class="tech-tools-container">
+                  <div class="mini-label-white gray-color">OJT / Internship</div>
+                  <div class="chips-container chips-container-small-width">
+                    <div class="single-chip small-chip">Effect House (TikTok AR)</div>
+                    <div class="single-chip small-chip">Interactive AR Filters</div>
+                    <div class="single-chip small-chip">Audio DSP</div>
+                    <div class="single-chip small-chip">Gamified Face/Body Tracking</div>
+                  </div>
+                </div>
+              </div>
+            </a>
           </div>
         </div>
       </nav>
     </div>
     <!--[if lte IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif]-->
+    <script>
+      import '../scripts/chips.js';
+    </script>
   </body>
 </html>
