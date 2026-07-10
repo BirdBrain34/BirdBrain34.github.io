@@ -40,6 +40,10 @@ const chipDescriptions = {
   'VS Code': 'Lightweight, extensible code editor with rich support for debugging, IntelliSense, and extensions.',
   'XAMPP': 'Free, cross-platform web server solution stack for local development and testing.',
 
+  // Certifications
+  'Full Stack Web Dev': 'Building complete web applications across both front-end (HTML/CSS/JavaScript) and back-end (server logic, databases, APIs) layers.',
+  'TOEIC': 'Test of English for International Communication certificate measuring professional English proficiency.',
+
   // Experience page chips
   'Effect House': 'TikTok\'s augmented reality platform for creating interactive face filters and AR effects.',
   'AR Filter/Game Logic': 'Designing and implementing augmented reality filters and game mechanics using Effect House.',
@@ -163,8 +167,14 @@ function initChipTooltips() {
   const onScroll = () => scheduleUpdate();
   const onResize = () => scheduleUpdate();
 
+  // The page's actual scrollable element is `.main` (it has `overflow: auto`),
+  // not `window` — so the listener must be attached there too, or the
+  // tooltip never repositions while the user scrolls.
+  const scrollContainer = document.querySelector('.main');
+
   // While a tooltip is active, keep it aligned with the chip as the user scrolls.
   window.addEventListener('scroll', onScroll, { passive: true });
+  scrollContainer?.addEventListener('scroll', onScroll, { passive: true });
   window.addEventListener('resize', onResize);
 
   // Attach click listeners to all chips on the page.
@@ -260,6 +270,7 @@ function initChipTooltips() {
     // Remove event listeners.
     document.removeEventListener('click', closeHandler);
     window.removeEventListener('scroll', onScroll);
+    scrollContainer?.removeEventListener('scroll', onScroll);
     window.removeEventListener('resize', onResize);
 
     // Ensure active tooltip is removed.

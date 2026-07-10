@@ -1,5 +1,5 @@
 ---
-const { title, type, date, mode, description, cert, credentials, skills, base } = Astro.props;
+const { title, type, date, mode, description, cert, membershipCert, credentials, skills, base } = Astro.props;
 ---
 
 <div class="single-item">
@@ -21,6 +21,22 @@ const { title, type, date, mode, description, cert, credentials, skills, base } 
             <path d="M8 12l2.5 2.5L16 9" />
           </svg>
           View Certificate
+        </a>
+      )}
+      {membershipCert && (
+        <a
+          href={`${base}/assets/certs/${membershipCert}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          style="display: inline-flex; align-items: center; gap: 6px; background: #1c1c1c; border: 1px solid #333; color: #fff; padding: 6px 14px; border-radius: 6px; font-size: 13px; text-decoration: none; transition: background 0.2s;"
+          onmouseover="this.style.background='#2b2b2b'"
+          onmouseout="this.style.background='#1c1c1c'"
+        >
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="10" />
+            <path d="M8 12l2.5 2.5L16 9" />
+          </svg>
+          View Membership Certificate
         </a>
       )}
     </div>

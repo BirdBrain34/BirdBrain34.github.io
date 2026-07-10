@@ -24,7 +24,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
             <section class="items-container">
               <h3>External Seminars</h3>
-              <div style="margin-top: 16px; display: flex; flex-direction: column; gap: 16px;">
+              <div style="margin-top: 16px; display: flex; flex-direction: column;">
                 <SeminarCard
                   title="Crypto and Blockchain 101 (History, Use Cases, Opportunities)"
                   type="External"
@@ -60,7 +60,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
             <section class="items-container">
               <h3>Internal Seminars</h3>
-              <div style="margin-top: 16px; display: flex; flex-direction: column; gap: 16px;">
+              <div style="margin-top: 16px; display: flex; flex-direction: column;">
                 <SeminarCard
                   title="Beyond the Breach: Leadership and Cybersecurity in the Age of Digital Transformation"
                   type="Internal"
@@ -68,6 +68,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
                   mode="Face-to-face — Global Classroom, Einstein Building, MMCL"
                   description="Framed cybersecurity as a leadership discipline rather than a purely technical one, presenting a staged model for digital transformation and emphasizing the value of professional networks and a well-maintained portfolio."
                   cert="beyond-the-breach.png"
+                  membershipCert="cybersocph-membership.png"
                   credentials={["CyberSocPH Member"]}
                   skills={["Cybersecurity Leadership", "Digital Transformation", "Professional Networking"]}
                   base={base}

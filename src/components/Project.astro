@@ -1,11 +1,12 @@
 ---
-const { title, date, desc, tech, github } = Astro.props;
+const { title, date, desc, tech, github, capstone } = Astro.props;
 ---
 
 <div class="single-item">
   <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 8px;">
     <h3 style="margin: 0;">{title}</h3>
     <div style="display: flex; align-items: center; gap: 12px; flex-shrink: 0;">
+      {capstone && <span style="color: #a8a8a8; font-size: 14px;">(Capstone)</span>}
       {date && <span style="color: #a8a8a8; font-size: 14px;">{date}</span>}
       {github && (
         <a

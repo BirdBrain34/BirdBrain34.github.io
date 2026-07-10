@@ -10,7 +10,7 @@ export interface Props {
 const { title, subtitle, description, achievements, tags } = Astro.props as Props;
 ---
 
-<div class="single-item" style="margin-bottom: 28px;">
+<div class="single-item">
   <h3 style="margin: 0;">{title}</h3>
 
   {subtitle && <div style="margin-top: 6px; color: #a8a8a8; font-size: 14px;">{subtitle}</div>}
