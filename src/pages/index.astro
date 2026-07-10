@@ -113,7 +113,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
                     loading="lazy"
                     alt="Experience"
                     class="projects-category-image"
-                    style="object-fit: contain; width: 150px; height: 150px;"
+                  style="object-fit: contain; width: 150px; height: 150px; filter: invert(1) brightness(2);"
                   />
                 </div>
               </div>
@@ -126,6 +126,27 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
                     <div class="single-chip small-chip">Interactive AR Filters</div>
                     <div class="single-chip small-chip">Audio DSP</div>
                     <div class="single-chip small-chip">Gamified Face/Body Tracking</div>
+                  </div>
+                </div>
+              </div>
+            </a>
+
+            <a href={`${base}/seminars/`} class="projects-container">
+              <div class="single-projects-category">
+                <div class="projects-category-image-container">
+                  <img src={`${base}/assets/seminars-icon.png`} loading="lazy" alt="Seminars" class="projects-category-image" style="filter: invert(1) brightness(2);" />
+                </div>
+              </div>
+              <div class="single-projects-content">
+                <h4>Seminars</h4>
+                <div class="tech-tools-container">
+                  <div class="mini-label-white gray-color">Featured seminars</div>
+                  <div class="chips-container chips-container-small-width">
+                    <div class="single-chip small-chip">Crypto & Blockchain</div>
+                    <div class="single-chip small-chip">IoT Security</div>
+                    <div class="single-chip small-chip">AI in Social Media</div>
+                    <div class="single-chip small-chip">Beyond the Breach</div>
+                    <div class="single-chip small-chip">Beyond the Code</div>
                   </div>
                 </div>
               </div>

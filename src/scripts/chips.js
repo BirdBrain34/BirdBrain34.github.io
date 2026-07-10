@@ -76,6 +76,31 @@ const chipDescriptions = {
   'PokedexCards': 'A web-based digital card collection inspired by the Pokédex for organizing Pokémon data.',
   'Personify API': 'A RESTful API project for managing and serving user profile data with authentication.',
   'DiceHard': 'A dice-rolling game application with probability tracking and interactive gameplay.',
+
+  // Seminars page chips
+  'Crypto & Blockchain': 'Foundational concepts of blockchain technology and cryptocurrency, including how transactions are validated and secured.',
+  'Cryptocurrency': 'Digital or virtual currency secured by cryptography and typically built on blockchain technology.',
+  'Web3': 'The vision of a decentralized internet built on blockchain technology, giving users more control over their own data.',
+  'Decentralization': 'Distributing control and data across a network rather than relying on a single central authority.',
+  'IoT Security': 'Best practices for securing internet-connected devices against common attack vectors.',
+  'Network Security': 'Practices and technologies used to protect a network and its data from unauthorized access or attacks.',
+  'Multi-Factor Authentication': 'A security method requiring two or more verification steps to confirm a user\'s identity.',
+  'Network Segmentation': 'Dividing a network into smaller isolated segments to limit the spread and impact of security breaches.',
+  'Machine Learning': 'A branch of AI where systems learn patterns from data to make predictions or decisions without explicit programming.',
+  'Computer Vision': 'A field of AI focused on enabling systems to interpret and understand visual information from images and video.',
+  'Natural Language Processing': 'A field of AI focused on enabling computers to understand, interpret, and generate human language.',
+  'AI Ethics': 'The study of moral issues raised by AI systems, including bias, privacy, and the societal impact of automation.',
+  'AI in Social Media': 'How machine learning and recommendation systems shape content feeds and the ethical questions this raises.',
+  'CyberSocPH Member': 'Member of the Cybersecurity Society of the Philippines, a professional organization for cybersecurity practitioners.',
+  'Cybersecurity Leadership': 'Guiding an organization\'s security strategy and culture, beyond just its technical implementation.',
+  'Digital Transformation': 'The process of integrating technology, strategy, and culture to fundamentally change how an organization operates.',
+  'Professional Networking': 'Building and maintaining relationships with peers and professionals to support long-term career growth.',
+  'Beyond the Breach': 'A leadership-focused look at cybersecurity and digital transformation strategy.',
+  'Beyond the Code': 'Modern cloud-native engineering practices including Zero Trust Architecture and Infrastructure as Code.',
+  'Zero Trust Architecture': 'A security model built on "never trust, always verify," assuming no user or device is trusted by default.',
+  'Kubernetes': 'An open-source platform for automating the deployment, scaling, and management of containerized applications.',
+  'Infrastructure as Code': 'Managing and provisioning computing infrastructure through machine-readable configuration files instead of manual processes.',
+  'Terraform': 'An open-source Infrastructure as Code tool used to define and provision cloud infrastructure through declarative configuration.',
 };
 
 /**

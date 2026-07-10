@@ -1,0 +1,96 @@
+---
+import Header from "../components/Header.astro";
+import SeminarCard from "../components/SeminarCard.astro";
+import Sidebar from "../components/Sidebar.astro";
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+
+<!DOCTYPE html>
+<html>
+  <Header title="Seminars | Lance Atendido" />
+  <body>
+    <div class="content">
+      <Sidebar selectedItem="seminars" />
+      <nav class="main">
+        <div class="container">
+          <div class="back-nav-container">
+            <a href={`${base}/`} class="back-nav-button w-inline-block">
+              <img src={`${base}/assets/back.svg`} loading="lazy" alt="" class="back-nav-img" />
+              <div>Back</div>
+            </a>
+          </div>
+          <div class="content-container">
+            <h1>Seminars</h1>
+
+            <section class="items-container">
+              <h3>External Seminars</h3>
+              <div style="margin-top: 16px; display: flex; flex-direction: column; gap: 16px;">
+                <SeminarCard
+                  title="Crypto and Blockchain 101 (History, Use Cases, Opportunities)"
+                  type="External"
+                  date="May 26, 2026"
+                  mode="Webinar via Zoom"
+                  description="Traced the evolution of blockchain technology from its 1991 origins through Bitcoin's 2008 debut, covering how transactions are validated across a distributed network and how to spot common cryptocurrency scams."
+                  cert="crypto-blockchain-101.png"
+                  skills={["Blockchain", "Cryptocurrency", "Web3", "Decentralization"]}
+                  base={base}
+                />
+                <SeminarCard
+                  title="Connected but Protected: Strengthening Network Security in the IoT Era"
+                  type="External"
+                  date="May 27, 2026"
+                  mode="Webinar via Google Meet"
+                  description="Covered the most common IoT security threats — weak passwords, malware, unauthorized access, and DDoS attacks — along with defensive practices like multi-factor authentication, firmware updates, encryption, and network segmentation."
+                  cert="iot-network-security.png"
+                  skills={["IoT Security", "Network Security", "Multi-Factor Authentication", "Network Segmentation"]}
+                  base={base}
+                />
+                <SeminarCard
+                  title="Learning Advocate 2026 Series: A.I. Behind Social Media"
+                  type="External"
+                  date="May 29, 2026"
+                  mode="Webinar via Google Meet"
+                  description="Explored how machine learning, computer vision, and recommendation engines shape personalized social media feeds, alongside the ethical tradeoffs of data privacy, algorithmic bias, and misinformation."
+                  cert="ai-behind-social-media.png"
+                  skills={["Machine Learning", "Computer Vision", "Natural Language Processing", "AI Ethics"]}
+                  base={base}
+                />
+              </div>
+            </section>
+
+            <section class="items-container">
+              <h3>Internal Seminars</h3>
+              <div style="margin-top: 16px; display: flex; flex-direction: column; gap: 16px;">
+                <SeminarCard
+                  title="Beyond the Breach: Leadership and Cybersecurity in the Age of Digital Transformation"
+                  type="Internal"
+                  date="June 20, 2026"
+                  mode="Face-to-face — Global Classroom, Einstein Building, MMCL"
+                  description="Framed cybersecurity as a leadership discipline rather than a purely technical one, presenting a staged model for digital transformation and emphasizing the value of professional networks and a well-maintained portfolio."
+                  cert="beyond-the-breach.png"
+                  credentials={["CyberSocPH Member"]}
+                  skills={["Cybersecurity Leadership", "Digital Transformation", "Professional Networking"]}
+                  base={base}
+                />
+                <SeminarCard
+                  title="Beyond the Code: Next-Gen Skills for the Cloud-Native Era"
+                  type="Internal"
+                  mode="Face-to-face — CCIS Week, MMCL"
+                  description="Focused on modern cloud engineering practices, covering Zero Trust Architecture, Kubernetes-based container orchestration, hub-and-spoke network topology, and Infrastructure as Code pipelines built with Terraform."
+                  cert="beyond-the-code.png"
+                  skills={["Zero Trust Architecture", "Kubernetes", "Infrastructure as Code", "Terraform"]}
+                  base={base}
+                />
+              </div>
+            </section>
+
+          </div>
+        </div>
+      </nav>
+    </div>
+    <!--[if lte IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif]-->
+    <script>
+      import '../scripts/chips.js';
+    </script>
+  </body>
+</html>
