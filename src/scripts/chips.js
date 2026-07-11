@@ -39,6 +39,13 @@ const chipDescriptions = {
   'Visual Studio': 'Full-featured IDE by Microsoft for developing .NET, C#, and cross-platform applications.',
   'VS Code': 'Lightweight, extensible code editor with rich support for debugging, IntelliSense, and extensions.',
   'XAMPP': 'Free, cross-platform web server solution stack for local development and testing.',
+  'Android': 'Mobile operating system by Google for smartphones, tablets, and app development.',
+  'Windows': 'Desktop operating system by Microsoft for personal computers and enterprise use.',
+  'Docker Desktop': 'Desktop application for building, running, and managing containerized applications locally.',
+  'Genymotion': 'Android emulator platform for testing and developing mobile applications on a desktop environment.',
+  'MobSF': 'Mobile Security Framework — an automated tool for security analysis of Android and iOS applications.',
+  'Supabase': 'Open-source Firebase alternative providing backend services like database, authentication, and storage.',
+  'TypeScript': 'Typed superset of JavaScript that compiles to plain JavaScript for building scalable applications.',
 
   // Certifications
   'Full Stack Web Dev': 'Building complete web applications across both front-end (HTML/CSS/JavaScript) and back-end (server logic, databases, APIs) layers.',
@@ -80,6 +87,14 @@ const chipDescriptions = {
   'PokedexCards': 'A web-based digital card collection inspired by the Pokédex for organizing Pokémon data.',
   'Personify API': 'A RESTful API project for managing and serving user profile data with authentication.',
   'DiceHard': 'A dice-rolling game application with probability tracking and interactive gameplay.',
+  'Programming Languages': 'Core languages used for writing backend logic, application code, and scripting across platforms.',
+  'Backend Development': 'Server-side development covering APIs, authentication, data processing, and client-server communication.',
+  'Database Management': 'Designing, querying, and maintaining relational databases with proper structure and constraints.',
+  'Frameworks & Platforms': 'Development frameworks and runtime platforms used to build mobile, web, and desktop applications.',
+  'Tools & Others': 'Additional tools and utilities for version control, development environments, and local testing.',
+  'OJT / Internship': 'On-the-job training at PurpleBug Inc. as an AR Game Developer Intern using Effect House.',
+  'Honors': 'Academic and competitive achievements including hackathon awards and Dean\'s List recognition.',
+  'Certifications': 'Professional certifications validating skills in networking, security, cloud computing, and full-stack development.',
 
   // Seminars page chips
   'Crypto & Blockchain': 'Foundational concepts of blockchain technology and cryptocurrency, including how transactions are validated and secured.',

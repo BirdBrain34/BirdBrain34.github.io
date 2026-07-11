@@ -668,6 +668,7 @@ p {
 .project-desc {
   color: #a8a8a8;
   line-height: 24px;
+  text-align: justify;
 }
 
 .project-desc.project-desc-list {
