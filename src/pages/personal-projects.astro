@@ -1,7 +1,6 @@
 ---
-import Header from '../components/Header.astro';
+import Layout from '../layouts/Layout.astro';
 import Project from '../components/Project.astro';
-import Sidebar from '../components/Sidebar.astro';
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const projects = [
   {
@@ -9,6 +8,23 @@ const projects = [
     date: "Ongoing",
     github: "https://github.com/BitACDC/SapPIIre",
     capstone: true,
+    screenshots: [
+      `${base}/assets/screenshots/projects/sappiire/phone_1.png`,
+      `${base}/assets/screenshots/projects/sappiire/phone_2.png`,
+      `${base}/assets/screenshots/projects/sappiire/phone_3.png`,
+      `${base}/assets/screenshots/projects/sappiire/phone_4.png`,
+      `${base}/assets/screenshots/projects/sappiire/phone_5.png`,
+      `${base}/assets/screenshots/projects/sappiire/phone_6.png`,
+      `${base}/assets/screenshots/projects/sappiire/phone_7.png`,
+      `${base}/assets/screenshots/projects/sappiire/web_1.png`,
+      `${base}/assets/screenshots/projects/sappiire/web_2.png`,
+      `${base}/assets/screenshots/projects/sappiire/web_3.png`,
+      `${base}/assets/screenshots/projects/sappiire/web_4.png`,
+      `${base}/assets/screenshots/projects/sappiire/web_5.png`,
+      `${base}/assets/screenshots/projects/sappiire/web_6.png`,
+      `${base}/assets/screenshots/projects/sappiire/web_7.png`,
+      `${base}/assets/screenshots/projects/sappiire/web_8.png`
+    ],
     desc: [
       "Developed backend infrastructure for a mobile application that uses QR codes to securely store and transmit user PII to online forms",
       "Built a backend authentication system with encrypted password storage to protect sensitive user data",
@@ -21,6 +37,13 @@ const projects = [
     title: "CCIS House Attendance Tracker of 2024",
     date: "August 12, 2024",
     github: "https://github.com/jp-gerona/it115l-final-project",
+    screenshots: [
+      `${base}/assets/screenshots/projects/ccis/CCIS_1.PNG`,
+      `${base}/assets/screenshots/projects/ccis/CCIS_2.PNG`,
+      `${base}/assets/screenshots/projects/ccis/CCIS_3.PNG`,
+      `${base}/assets/screenshots/projects/ccis/CCIS_4.PNG`,
+      `${base}/assets/screenshots/projects/ccis/CCIS_5.PNG`
+    ],
     desc: [
       "Developed a web application management system for processing CCIS student records during CCIS Week 2024",
       "Built the API layer connecting the Attendance database to the web application with full CRUD functionality",
@@ -45,6 +68,13 @@ const projects = [
     title: "Personify (TwitterCloneAPI)",
     date: "February 12, 2024",
     github: "https://github.com/BitACDC/Personify",
+    screenshots: [
+      `${base}/assets/screenshots/projects/personify/Personify_1.png`,
+      `${base}/assets/screenshots/projects/personify/Personify_2.png`,
+      `${base}/assets/screenshots/projects/personify/Personify_3.png`,
+      `${base}/assets/screenshots/projects/personify/Personify_4.png`,
+      `${base}/assets/screenshots/projects/personify/Personify_5.png`
+    ],
     desc: [
       "Developed a Twitter clone themed around 'Persona', utilizing a REST API for all core social features",
       "Implemented sign-up, login, tweet posting, liking, and following functionalities via API calls",
@@ -57,6 +87,11 @@ const projects = [
     title: "DiceHard",
     date: "January 20, 2024",
     github: "https://github.com/BirdBrain34/DiceHard",
+    screenshots: [
+      `${base}/assets/screenshots/projects/dicehard/DiceHard_1.png`,
+      `${base}/assets/screenshots/projects/dicehard/DiceHard_2.png`,
+      `${base}/assets/screenshots/projects/dicehard/DiceHard_3.png`
+    ],
     desc: [
       "Built a dice-based roguelike game where movement, attacks, and skills are all determined by dice rolls — emphasizing resource management and strategic gameplay",
       "Developed player and enemy stat systems, skill mechanics, and the core gameplay loop in C#",
@@ -67,14 +102,7 @@ const projects = [
 ];
 ---
 
-<!DOCTYPE html>
-<html>
-  <Header title="Projects | Lance Atendido" />
-  <body>
-    <div class="content">
-      <Sidebar selectedItem="personal-projects" />
-      <nav class="main">
-        <div class="container">
+<Layout title="Projects | Lance Atendido" selectedItem="personal-projects">
           <div class="back-nav-container">
             <a href={`${base}/`} class="back-nav-button w-inline-block">
               <img src={`${base}/assets/back.svg`} loading="lazy" alt="" class="back-nav-img" />
@@ -91,15 +119,10 @@ const projects = [
                 tech={project.tech}
                 github={project.github}
                 capstone={project.capstone}
+                screenshots={project.screenshots}
+                video={project.video}
               />
             ))}
           </div>
         </div>
-      </nav>
-    </div>
-    <!--[if lte IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif]-->
-    <script>
-      import '../scripts/chips.js';
-    </script>
-  </body>
-</html>
+</Layout>

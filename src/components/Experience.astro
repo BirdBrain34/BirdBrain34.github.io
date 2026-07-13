@@ -1,6 +1,8 @@
 ---
 import ProjectCard from './ProjectCard.astro';
 
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
 const projects = [
   {
     title: 'EQtinue ang Heritage AR Karaoke – Song 1 (Kung Ikaw ay Masaya)',
@@ -9,9 +11,16 @@ const projects = [
       'Refactored and optimized an in-progress AR interactive karaoke filter in Effect House to improve performance and code maintainability.',
     achievements: [
       'Cleaned up and refactored the visual scripting/logic flow for regular text rendering, synchronized real-time highlighted lyrics, and bouncing-ball text tracking.',
-      'Programmed and integrated a dynamic “win animation” sequence triggered upon song completion.',
+      'Programmed and integrated a dynamic "win animation" sequence triggered upon song completion.',
     ],
     tags: ['Effect House', 'Visual Scripting', 'Refactoring', 'AR Animation'],
+    screenshots: [
+      `${base}/assets/screenshots/experience/song 1/song 1_1.PNG`,
+      `${base}/assets/screenshots/experience/song 1/song 1_2.PNG`,
+      `${base}/assets/screenshots/experience/song 1/song 1_3.png`,
+      `${base}/assets/screenshots/experience/song 1/song 1_4.png`,
+      `${base}/assets/screenshots/experience/song 1/song 1_5.png`,
+    ],
   },
   {
     title: 'EQtinue ang Heritage AR Karaoke – Song 2 (Bahay Kubo)',
@@ -21,10 +30,19 @@ const projects = [
     achievements: [
       'Engineered a real-time Karaoke scoring framework integrating pitch detection and timing window mechanics to validate user vocal inputs within Effect House.',
       'Optimized filter performance and minimized memory overhead by implementing custom Object Pooling logic.',
-      'Simulated complex asset velocity shifts aligned with the music’s rhythm using a custom “Transit by Time” logic flow to bypass traditional physics constraints.',
-      'Refined the UI layer to match custom aesthetic requirements, incorporating interactive “hovering vegetables” animations.',
+      'Simulated complex asset velocity shifts aligned with the music\'s rhythm using a custom "Transit by Time" logic flow to bypass traditional physics constraints.',
+      'Refined the UI layer to match custom aesthetic requirements, incorporating interactive "hovering vegetables" animations.',
     ],
     tags: ['Effect House', 'Pitch Detection', 'Audio DSP', 'Object Pooling', 'UI/UX Animation', 'Visual Scripting'],
+    screenshots: [
+      `${base}/assets/screenshots/experience/song 2/song 2_1.png`,
+      `${base}/assets/screenshots/experience/song 2/song 2_2.png`,
+      `${base}/assets/screenshots/experience/song 2/song 2_3.png`,
+      `${base}/assets/screenshots/experience/song 2/song 2_4.png`,
+      `${base}/assets/screenshots/experience/song 2/song 2_5.png`,
+      `${base}/assets/screenshots/experience/song 2/song 2_6.png`,
+      `${base}/assets/screenshots/experience/song 2/song 2_7.png`,
+    ],
   },
   {
     title: 'Catch the Healthy Food Challenge',
@@ -34,10 +52,16 @@ const projects = [
     achievements: [
       'Built a robust game loop featuring localized face-tracking interaction, active game timers, and a real-time scoring system.',
       'Maximized mobile AR efficiency and bypassed Effect House performance bottlenecks by utilizing Object Pooling paired with dynamic runtime texture swapping (recycling existing game objects instead of instantiating new assets).',
-      'Programmed a “Healthy Streak” combo system that scales visual effects based on continuous correct inputs and resets upon junk-food collision.',
+      'Programmed a "Healthy Streak" combo system that scales visual effects based on continuous correct inputs and resets upon junk-food collision.',
       'Integrated a responsive visual/audio feedback loop, featuring glowing ambient screen pulses (Green/Red), contextual pop-up text alerts, and synchronized eating SFX.',
     ],
     tags: ['Effect House', 'Face Tracking', 'Game Loop', 'Object Pooling', 'Audio Feedback', 'Visual Scripting'],
+    screenshots: [
+      `${base}/assets/screenshots/experience/eating game/eat_1.png`,
+      `${base}/assets/screenshots/experience/eating game/eat_2.png`,
+      `${base}/assets/screenshots/experience/eating game/eat_3.png`,
+      `${base}/assets/screenshots/experience/eating game/eat_4.png`,
+    ],
   },
 ];
 ---
@@ -50,6 +74,8 @@ const projects = [
       description={p.description}
       achievements={p.achievements}
       tags={p.tags}
+      screenshots={p.screenshots}
+      video={p.video}
     />
   ))}
 </section>
