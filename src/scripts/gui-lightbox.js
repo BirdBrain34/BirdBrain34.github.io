@@ -92,8 +92,19 @@ function initGuiLightbox() {
   }
 
   function open(triggerButton) {
+    // First try: find template inside parent .single-item (project/seminar cards)
+    let template = null;
     const card = triggerButton.closest('.single-item');
-    const template = card && card.querySelector('template[data-gui-media]');
+    if (card) {
+      template = card.querySelector('template[data-gui-media]');
+    }
+    // Fallback: find template by matching data-gui-media attribute (homepage CV, etc.)
+    if (!template) {
+      const mediaId = triggerButton.getAttribute('data-gui-media');
+      if (mediaId) {
+        template = document.querySelector(`template[data-gui-media="${mediaId}"]`);
+      }
+    }
     if (!template) return;
 
     mediaItems = Array.from(template.content.children).map((node) => node.cloneNode(true));

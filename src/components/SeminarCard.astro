@@ -7,43 +7,35 @@ const { title, type, date, mode, description, cert, membershipCert, credentials,
     <h3 style="margin: 0;">{title}</h3>
     <div style="display: flex; align-items: center; gap: 12px; flex-shrink: 0;">
       <span style="color: #a8a8a8; font-size: 14px;">{type}</span>
-      {cert && (
-        <a
-          href={`${base}/assets/certs/${cert}`}
-          target="_blank"
-          rel="noopener noreferrer"
-          style="display: inline-flex; align-items: center; gap: 6px; background: #1c1c1c; border: 1px solid #333; color: #fff; padding: 6px 14px; border-radius: 6px; font-size: 13px; text-decoration: none; transition: background 0.2s;"
-          onmouseover="this.style.background='#2b2b2b'"
-          onmouseout="this.style.background='#1c1c1c'"
-        >
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="12" cy="12" r="10" />
-            <path d="M8 12l2.5 2.5L16 9" />
-          </svg>
-          View Certificate
-        </a>
-      )}
-      {membershipCert && (
-        <a
-          href={`${base}/assets/certs/${membershipCert}`}
-          target="_blank"
-          rel="noopener noreferrer"
-          style="display: inline-flex; align-items: center; gap: 6px; background: #1c1c1c; border: 1px solid #333; color: #fff; padding: 6px 14px; border-radius: 6px; font-size: 13px; text-decoration: none; transition: background 0.2s;"
-          onmouseover="this.style.background='#2b2b2b'"
-          onmouseout="this.style.background='#1c1c1c'"
-        >
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="12" cy="12" r="10" />
-            <path d="M8 12l2.5 2.5L16 9" />
-          </svg>
-          View Membership Certificate
-        </a>
-      )}
     </div>
   </div>
   <div class="project-desc" style="margin-top: 8px; color: #a8a8a8; font-size: 14px;">
     {mode}{date && <span>{` • ${date}`}</span>}
   </div>
+  {(cert || membershipCert) && (
+    <>
+      <div class="mini-label-white">Certificate</div>
+      <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px;">
+        {cert && (
+          <button
+            type="button"
+            class="gui-trigger"
+            data-gui-trigger
+            data-gui-title={title}
+            style="display: inline-flex; align-items: center; gap: 6px; background: #1c1c1c; border: 1px solid #333; color: #fff; padding: 6px 14px; border-radius: 6px; font-size: 13px; cursor: pointer; transition: background 0.2s;"
+            onmouseover="this.style.background='#2b2b2b'"
+            onmouseout="this.style.background='#1c1c1c'"
+          >
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="12" cy="12" r="10" />
+              <path d="M8 12l2.5 2.5L16 9" />
+            </svg>
+            View Certificate
+          </button>
+        )}
+      </div>
+    </>
+  )}
   <p class="project-desc" style="margin-top: 12px;">{description}</p>
   {credentials && credentials.length > 0 && (
     <>
@@ -52,6 +44,12 @@ const { title, type, date, mode, description, cert, membershipCert, credentials,
         {credentials.map(credential => <div class="single-chip">{credential}</div>)}
       </div>
     </>
+  )}
+  {(cert || membershipCert) && (
+    <template data-gui-media>
+      {cert && <img src={`${base}/assets/certs/${cert}`} alt={`${title} certificate`} loading="lazy" />}
+      {membershipCert && <img src={`${base}/assets/certs/${membershipCert}`} alt={`${title} membership certificate`} loading="lazy" />}
+    </template>
   )}
   {skills?.length ? (
     <>
