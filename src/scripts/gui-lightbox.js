@@ -43,6 +43,13 @@ function initGuiLightbox() {
     return el;
   }
 
+  // Must match the CSS transition duration on .gui-lightbox-media img/video
+  // (opacity 0.35s) — the old content is only removed from the DOM after
+  // it has actually finished fading out, otherwise the swap happens
+  // mid-fade and reads as an instant, un-animated jump cut.
+  const MEDIA_FADE_MS = 350;
+  let swapTimeout = null;
+
   function show(index, animate = true) {
     if (mediaItems.length === 0) return;
     currentIndex = (index + mediaItems.length) % mediaItems.length;
@@ -58,23 +65,30 @@ function initGuiLightbox() {
       nav.style.display = 'none';
     }
 
-    if (!animate) {
+    if (swapTimeout) {
+      clearTimeout(swapTimeout);
+      swapTimeout = null;
+    }
+
+    const renderMedia = () => {
+      const node = mediaItems[currentIndex].cloneNode(true);
       mediaContainer.innerHTML = '';
-      mediaContainer.appendChild(mediaItems[currentIndex].cloneNode(true));
+      mediaContainer.appendChild(node);
+      // Force a reflow so the browser registers the "not visible" starting
+      // state before we add the class — otherwise both changes get
+      // collapsed into one frame and the fade-in never plays.
+      void node.offsetWidth;
+      node.classList.add('is-visible');
+    };
+
+    const currentEl = mediaContainer.querySelector('img, video');
+    if (!animate || !currentEl) {
+      renderMedia();
       return;
     }
 
-    // Fade out, swap content, fade in
-    mediaContainer.style.opacity = '0';
-    mediaContainer.style.transition = 'opacity 0.2s ease';
-
-    requestAnimationFrame(() => {
-      mediaContainer.innerHTML = '';
-      mediaContainer.appendChild(mediaItems[currentIndex].cloneNode(true));
-      // Force reflow so the browser picks up the new content before fading in
-      mediaContainer.offsetHeight;
-      mediaContainer.style.opacity = '1';
-    });
+    currentEl.classList.remove('is-visible');
+    swapTimeout = window.setTimeout(renderMedia, MEDIA_FADE_MS);
   }
 
   function open(triggerButton) {
@@ -93,28 +107,11 @@ function initGuiLightbox() {
 
     document.body.style.overflow = 'hidden';
 
-    // Reliable open animation: set initial closed state, force reflow, then animate in
-    const panel = overlay.querySelector('.gui-lightbox-panel');
-    overlay.style.opacity = '0';
-    overlay.style.background = 'rgba(10, 10, 12, 0)';
-    overlay.style.backdropFilter = 'blur(0px)';
-    overlay.style.webkitBackdropFilter = 'blur(0px)';
-    overlay.style.pointerEvents = 'auto';
-    panel.style.opacity = '0';
-    panel.style.transform = 'translateY(20px) scale(0.96)';
-
-    // Force the browser to commit those styles before transitioning
-    overlay.offsetHeight;
-
-    overlay.style.transition = 'opacity 0.25s ease, background 0.25s ease, backdrop-filter 0.25s ease, -webkit-backdrop-filter 0.25s ease';
-    panel.style.transition = 'opacity 0.25s ease, transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1)';
-
-    overlay.style.opacity = '1';
-    overlay.style.background = 'rgba(10, 10, 12, 0.82)';
-    overlay.style.backdropFilter = 'blur(4px)';
-    overlay.style.webkitBackdropFilter = 'blur(4px)';
-    panel.style.opacity = '1';
-    panel.style.transform = 'translateY(0) scale(1)';
+    // Force a reflow before adding the class so the opacity/transform
+    // transition actually plays on the very first open, not just on
+    // subsequent ones.
+    void overlay.offsetWidth;
+    overlay.classList.add('is-open');
 
     overlay.querySelector('.gui-lightbox-close').focus();
 
@@ -123,9 +120,11 @@ function initGuiLightbox() {
 
   function close() {
     if (!overlay) return;
-    overlay.style.transition = '';
-    overlay.style.opacity = '0';
-    overlay.style.pointerEvents = 'none';
+    if (swapTimeout) {
+      clearTimeout(swapTimeout);
+      swapTimeout = null;
+    }
+    overlay.classList.remove('is-open');
     document.body.style.overflow = '';
     document.removeEventListener('keydown', onKeydown);
     if (lastFocusedTrigger) lastFocusedTrigger.focus();
