@@ -73,25 +73,85 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
                   <div class="achievement-eyebrow">Certification</div>
                   <h4 style="color: #fff; margin-bottom: 6px;">Ethical Hacking</h4>
                   <p class="project-desc">Certification covering cybersecurity principles, penetration testing methodologies, and ethical hacking techniques.</p>
+                  <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px;">
+                    <button
+                      type="button"
+                      class="gui-trigger"
+                      data-gui-trigger
+                      data-gui-title="Ethical Hacking"
+                      style="display: inline-flex; align-items: center; gap: 6px; background: #1c1c1c; border: 1px solid #333; color: #fff; padding: 6px 14px; border-radius: 6px; font-size: 13px; cursor: pointer; transition: background 0.2s;"
+                      onmouseover="this.style.background='#2b2b2b'"
+                      onmouseout="this.style.background='#1c1c1c'"
+                    >
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="12" cy="12" r="10" />
+                        <path d="M8 12l2.5 2.5L16 9" />
+                      </svg>
+                      View Certificate
+                    </button>
+                  </div>
                   <div class="chips-container" style="margin-top: 14px;">
                     <div class="single-chip small-chip">Ethical Hacking</div>
                   </div>
+                  <template data-gui-media>
+                    <img src={`${base}/assets/certificates/skill%20certs/ethical%20hacker%20cert.png`} alt="Ethical Hacking certificate" loading="lazy" />
+                  </template>
                 </div>
                 <div class="single-item">
                   <div class="achievement-eyebrow">Certification</div>
                   <h4 style="color: #fff; margin-bottom: 6px;">CompTIA Tech+ Series</h4>
                   <p class="project-desc">Industry-recognized certification validating foundational IT knowledge and technical support skills.</p>
+                  <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px;">
+                    <button
+                      type="button"
+                      class="gui-trigger"
+                      data-gui-trigger
+                      data-gui-title="CompTIA Tech+ Series"
+                      style="display: inline-flex; align-items: center; gap: 6px; background: #1c1c1c; border: 1px solid #333; color: #fff; padding: 6px 14px; border-radius: 6px; font-size: 13px; cursor: pointer; transition: background 0.2s;"
+                      onmouseover="this.style.background='#2b2b2b'"
+                      onmouseout="this.style.background='#1c1c1c'"
+                    >
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="12" cy="12" r="10" />
+                        <path d="M8 12l2.5 2.5L16 9" />
+                      </svg>
+                      View Certificate
+                    </button>
+                  </div>
                   <div class="chips-container" style="margin-top: 14px;">
                     <div class="single-chip small-chip">CompTIA Tech+</div>
                   </div>
+                  <template data-gui-media>
+                    <img src={`${base}/assets/certificates/skill%20certs/CompTIA%20Tech+%20certificate.png`} alt="CompTIA Tech+ Series certificate" loading="lazy" />
+                  </template>
                 </div>
                 <div class="single-item">
                   <div class="achievement-eyebrow">Certification</div>
                   <h4 style="color: #fff; margin-bottom: 6px;">Python Programming — CodeChum</h4>
                   <p class="project-desc">Certification demonstrating proficiency in Python programming fundamentals and applied problem-solving.</p>
+                  <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px;">
+                    <button
+                      type="button"
+                      class="gui-trigger"
+                      data-gui-trigger
+                      data-gui-title="Python Programming — CodeChum"
+                      style="display: inline-flex; align-items: center; gap: 6px; background: #1c1c1c; border: 1px solid #333; color: #fff; padding: 6px 14px; border-radius: 6px; font-size: 13px; cursor: pointer; transition: background 0.2s;"
+                      onmouseover="this.style.background='#2b2b2b'"
+                      onmouseout="this.style.background='#1c1c1c'"
+                    >
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="12" cy="12" r="10" />
+                        <path d="M8 12l2.5 2.5L16 9" />
+                      </svg>
+                      View Certificate
+                    </button>
+                  </div>
                   <div class="chips-container" style="margin-top: 14px;">
                     <div class="single-chip small-chip">Python (CodeChum)</div>
                   </div>
+                  <template data-gui-media>
+                    <img src={`${base}/assets/certificates/skill%20certs/Python%20Cert.png`} alt="Python Programming — CodeChum certificate" loading="lazy" />
+                  </template>
                 </div>
                 <div class="single-item">
                   <div class="achievement-eyebrow">Certification</div>
@@ -102,22 +162,265 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
                     <div class="single-chip small-chip">Machine Learning</div>
                   </div>
                 </div>
-                <div class="single-item">
-                  <div class="achievement-eyebrow">Certification</div>
-                  <h4 style="color: #fff; margin-bottom: 6px;">Full Stack Web Development — Amazon (Coursera)</h4>
-                  <p class="project-desc">Amazon certification covering modern full-stack web development practices, earned through Coursera.</p>
-                  <div class="chips-container" style="margin-top: 14px;">
-                    <div class="single-chip small-chip">Full Stack Web Dev</div>
-                  </div>
-                </div>
                 <div class="single-item" style="grid-column: 1 / -1;">
                   <div class="achievement-eyebrow">Certification</div>
                   <h4 style="color: #fff; margin-bottom: 6px;">Blockchain — Certificate of Participation</h4>
                   <p class="project-desc">Participated in a blockchain-focused program covering distributed ledger technology concepts and applications.</p>
+                  <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px;">
+                    <button
+                      type="button"
+                      class="gui-trigger"
+                      data-gui-trigger
+                      data-gui-title="Blockchain — Certificate of Participation"
+                      style="display: inline-flex; align-items: center; gap: 6px; background: #1c1c1c; border: 1px solid #333; color: #fff; padding: 6px 14px; border-radius: 6px; font-size: 13px; cursor: pointer; transition: background 0.2s;"
+                      onmouseover="this.style.background='#2b2b2b'"
+                      onmouseout="this.style.background='#1c1c1c'"
+                    >
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="12" cy="12" r="10" />
+                        <path d="M8 12l2.5 2.5L16 9" />
+                      </svg>
+                      View Certificate
+                    </button>
+                  </div>
                   <div class="chips-container" style="margin-top: 14px;">
                     <div class="single-chip small-chip">Blockchain</div>
                     <div class="single-chip small-chip">Cryptocurrency</div>
                   </div>
+                  <template data-gui-media>
+                    <img src={`${base}/assets/certificates/skill%20certs/blockchain%20cert.png`} alt="Blockchain — Certificate of Participation certificate" loading="lazy" />
+                  </template>
+                </div>
+              </div>
+            </section>
+
+            <section class="items-container">
+              <h3>Courseworks</h3>
+              <div class="achievements-grid">
+                <div class="single-item">
+                  <div class="achievement-eyebrow">Coursework</div>
+                  <h4 style="color: #fff; margin-bottom: 6px;">Introduction to Docker</h4>
+                  <p class="project-desc">Introductory course covering Docker containerization fundamentals, including images, containers, and basic orchestration concepts.</p>
+                  <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px;">
+                    <button
+                      type="button"
+                      class="gui-trigger"
+                      data-gui-trigger
+                      data-gui-title="Introduction to Docker"
+                      style="display: inline-flex; align-items: center; gap: 6px; background: #1c1c1c; border: 1px solid #333; color: #fff; padding: 6px 14px; border-radius: 6px; font-size: 13px; cursor: pointer; transition: background 0.2s;"
+                      onmouseover="this.style.background='#2b2b2b'"
+                      onmouseout="this.style.background='#1c1c1c'"
+                    >
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="12" cy="12" r="10" />
+                        <path d="M8 12l2.5 2.5L16 9" />
+                      </svg>
+                      View Certificate
+                    </button>
+                  </div>
+                  <div class="chips-container" style="margin-top: 14px;">
+                    <div class="single-chip small-chip">Docker</div>
+                  </div>
+                  <template data-gui-media>
+                    <img src={`${base}/assets/certificates/coursework%20certs/Introduction%20to%20Docker%20Certificate.png`} alt="Introduction to Docker certificate" loading="lazy" />
+                  </template>
+                </div>
+
+                <div class="single-item">
+                  <div class="achievement-eyebrow">Coursework</div>
+                  <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 8px; margin-bottom: 6px;">
+                    <h4 style="color: #fff; margin: 0;">Hello Node Kubernetes</h4>
+                    <a
+                      href="https://coursera.org/verify/MF4B7262DZSL"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      style="display: inline-flex; align-items: center; gap: 6px; background: #1c1c1c; border: 1px solid #333; color: #fff; padding: 6px 14px; border-radius: 6px; font-size: 13px; text-decoration: none; transition: background 0.2s; flex-shrink: 0;"
+                      onmouseover="this.style.background='#2b2b2b'"
+                      onmouseout="this.style.background='#1c1c1c'"
+                    >
+                      Verify ↗
+                    </a>
+                  </div>
+                  <p class="project-desc">Google Cloud, via Coursera. Deployed a Node.js application to a Kubernetes cluster.</p>
+                  <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px;">
+                    <button
+                      type="button"
+                      class="gui-trigger"
+                      data-gui-trigger
+                      data-gui-title="Hello Node Kubernetes"
+                      style="display: inline-flex; align-items: center; gap: 6px; background: #1c1c1c; border: 1px solid #333; color: #fff; padding: 6px 14px; border-radius: 6px; font-size: 13px; cursor: pointer; transition: background 0.2s;"
+                      onmouseover="this.style.background='#2b2b2b'"
+                      onmouseout="this.style.background='#1c1c1c'"
+                    >
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="12" cy="12" r="10" />
+                        <path d="M8 12l2.5 2.5L16 9" />
+                      </svg>
+                      View Certificate
+                    </button>
+                  </div>
+                  <div class="chips-container" style="margin-top: 14px;">
+                    <div class="single-chip small-chip">Kubernetes</div>
+                    <div class="single-chip small-chip">Docker</div>
+                  </div>
+                  <template data-gui-media>
+                    <img src={`${base}/assets/certificates/coursework%20certs/Hello%20Node%20Kubernetes%20Certificate.png`} alt="Hello Node Kubernetes certificate" loading="lazy" />
+                  </template>
+                </div>
+
+                <div class="single-item">
+                  <div class="achievement-eyebrow">Coursework</div>
+                  <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 8px; margin-bottom: 6px;">
+                    <h4 style="color: #fff; margin: 0;">APIs in Node.js: Write a RESTful API Backend Application</h4>
+                    <a
+                      href="https://coursera.org/verify/YEWKIAFVUAC3"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      style="display: inline-flex; align-items: center; gap: 6px; background: #1c1c1c; border: 1px solid #333; color: #fff; padding: 6px 14px; border-radius: 6px; font-size: 13px; text-decoration: none; transition: background 0.2s; flex-shrink: 0;"
+                      onmouseover="this.style.background='#2b2b2b'"
+                      onmouseout="this.style.background='#1c1c1c'"
+                    >
+                      Verify ↗
+                    </a>
+                  </div>
+                  <p class="project-desc">Coursera Project Network. Built a RESTful API backend application from scratch using Node.js.</p>
+                  <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px;">
+                    <button
+                      type="button"
+                      class="gui-trigger"
+                      data-gui-trigger
+                      data-gui-title="APIs in Node.js"
+                      style="display: inline-flex; align-items: center; gap: 6px; background: #1c1c1c; border: 1px solid #333; color: #fff; padding: 6px 14px; border-radius: 6px; font-size: 13px; cursor: pointer; transition: background 0.2s;"
+                      onmouseover="this.style.background='#2b2b2b'"
+                      onmouseout="this.style.background='#1c1c1c'"
+                    >
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="12" cy="12" r="10" />
+                        <path d="M8 12l2.5 2.5L16 9" />
+                      </svg>
+                      View Certificate
+                    </button>
+                  </div>
+                  <div class="chips-container" style="margin-top: 14px;">
+                    <div class="single-chip small-chip">Node.js</div>
+                    <div class="single-chip small-chip">REST API</div>
+                  </div>
+                  <template data-gui-media>
+                    <img src={`${base}/assets/certificates/coursework%20certs/APIs%20in%20Node.js%20Write%20a%20RESTful%20API%20Backend%20Application%20Certificate.png`} alt="APIs in Node.js certificate" loading="lazy" />
+                  </template>
+                </div>
+
+                <div class="single-item">
+                  <div class="achievement-eyebrow">Coursework</div>
+                  <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 8px; margin-bottom: 6px;">
+                    <h4 style="color: #fff; margin: 0;">APIs in Java: Call and Integrate an API</h4>
+                    <a
+                      href="https://coursera.org/verify/TZW7UX9Q8BVI"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      style="display: inline-flex; align-items: center; gap: 6px; background: #1c1c1c; border: 1px solid #333; color: #fff; padding: 6px 14px; border-radius: 6px; font-size: 13px; text-decoration: none; transition: background 0.2s; flex-shrink: 0;"
+                      onmouseover="this.style.background='#2b2b2b'"
+                      onmouseout="this.style.background='#1c1c1c'"
+                    >
+                      Verify ↗
+                    </a>
+                  </div>
+                  <p class="project-desc">Coursera Project Network. Called and integrated a third-party API within a Java application.</p>
+                  <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px;">
+                    <button
+                      type="button"
+                      class="gui-trigger"
+                      data-gui-trigger
+                      data-gui-title="APIs in Java"
+                      style="display: inline-flex; align-items: center; gap: 6px; background: #1c1c1c; border: 1px solid #333; color: #fff; padding: 6px 14px; border-radius: 6px; font-size: 13px; cursor: pointer; transition: background 0.2s;"
+                      onmouseover="this.style.background='#2b2b2b'"
+                      onmouseout="this.style.background='#1c1c1c'"
+                    >
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="12" cy="12" r="10" />
+                        <path d="M8 12l2.5 2.5L16 9" />
+                      </svg>
+                      View Certificate
+                    </button>
+                  </div>
+                  <div class="chips-container" style="margin-top: 14px;">
+                    <div class="single-chip small-chip">Java</div>
+                    <div class="single-chip small-chip">REST API</div>
+                  </div>
+                  <template data-gui-media>
+                    <img src={`${base}/assets/certificates/coursework%20certs/APIs%20in%20Java%20Call%20and%20Integrate%20an%20API%20Certificate.png`} alt="APIs in Java certificate" loading="lazy" />
+                  </template>
+                </div>
+
+                <div class="single-item">
+                  <div class="achievement-eyebrow">Coursework</div>
+                  <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 8px; margin-bottom: 6px;">
+                    <h4 style="color: #fff; margin: 0;">Full Stack Web Development — Amazon (Coursera)</h4>
+                    <a
+                      href="https://coursera.org/verify/02A7ZXSFRO1G"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      style="display: inline-flex; align-items: center; gap: 6px; background: #1c1c1c; border: 1px solid #333; color: #fff; padding: 6px 14px; border-radius: 6px; font-size: 13px; text-decoration: none; transition: background 0.2s; flex-shrink: 0;"
+                      onmouseover="this.style.background='#2b2b2b'"
+                      onmouseout="this.style.background='#1c1c1c'"
+                    >
+                      Verify ↗
+                    </a>
+                  </div>
+                  <p class="project-desc">Amazon certification covering modern full-stack web development practices, earned through Coursera.</p>
+                  <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px;">
+                    <button
+                      type="button"
+                      class="gui-trigger"
+                      data-gui-trigger
+                      data-gui-title="Full Stack Web Development — Amazon (Coursera)"
+                      style="display: inline-flex; align-items: center; gap: 6px; background: #1c1c1c; border: 1px solid #333; color: #fff; padding: 6px 14px; border-radius: 6px; font-size: 13px; cursor: pointer; transition: background 0.2s;"
+                      onmouseover="this.style.background='#2b2b2b'"
+                      onmouseout="this.style.background='#1c1c1c'"
+                    >
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="12" cy="12" r="10" />
+                        <path d="M8 12l2.5 2.5L16 9" />
+                      </svg>
+                      View Certificate
+                    </button>
+                  </div>
+                  <div class="chips-container" style="margin-top: 14px;">
+                    <div class="single-chip small-chip">Full Stack Web Dev</div>
+                  </div>
+                  <template data-gui-media>
+                    <img src={`${base}/assets/certificates/coursework%20certs/Full%20Stack%20Amazon%20Cert.png`} alt="Full Stack Web Development — Amazon (Coursera) certificate" loading="lazy" />
+                  </template>
+                </div>
+
+                <div class="single-item">
+                  <div class="achievement-eyebrow">Coursework</div>
+                  <h4 style="color: #fff; margin-bottom: 6px;">Object-Oriented Programming in Python</h4>
+                  <p class="project-desc">Course covering object-oriented programming principles in Python, including classes, inheritance, polymorphism, and encapsulation.</p>
+                  <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px;">
+                    <button
+                      type="button"
+                      class="gui-trigger"
+                      data-gui-trigger
+                      data-gui-title="Object-Oriented Programming in Python"
+                      style="display: inline-flex; align-items: center; gap: 6px; background: #1c1c1c; border: 1px solid #333; color: #fff; padding: 6px 14px; border-radius: 6px; font-size: 13px; cursor: pointer; transition: background 0.2s;"
+                      onmouseover="this.style.background='#2b2b2b'"
+                      onmouseout="this.style.background='#1c1c1c'"
+                    >
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="12" cy="12" r="10" />
+                        <path d="M8 12l2.5 2.5L16 9" />
+                      </svg>
+                      View Certificate
+                    </button>
+                  </div>
+                  <div class="chips-container" style="margin-top: 14px;">
+                    <div class="single-chip small-chip">Python</div>
+                    <div class="single-chip small-chip">OOP</div>
+                  </div>
+                  <template data-gui-media>
+                    <img src={`${base}/assets/certificates/coursework%20certs/Object-Oriented%20Programming%20in%20Python%20Certificate.png`} alt="Object-Oriented Programming in Python certificate" loading="lazy" />
+                  </template>
                 </div>
               </div>
             </section>

@@ -44,9 +44,26 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
                     OJT / Internship
                   </div>
 
-                  <div style="color: #fff; font-size: 22px; line-height: 28px; font-weight: 400; margin-bottom: 6px;">
-                    AR Game Developer Intern
-                    <span style="color: #a8a8a8; font-weight: 300;">• PurpleBug Inc.</span>
+                  <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 8px; margin-bottom: 6px;">
+                    <div style="color: #fff; font-size: 22px; line-height: 28px; font-weight: 400;">
+                      AR Game Developer Intern
+                      <span style="color: #a8a8a8; font-weight: 300;">• PurpleBug Inc.</span>
+                    </div>
+                    <button
+                      type="button"
+                      class="gui-trigger"
+                      data-gui-trigger
+                      data-gui-title="OJT / Internship — PurpleBug Inc."
+                      style="display: inline-flex; align-items: center; gap: 6px; background: #1c1c1c; border: 1px solid #333; color: #fff; padding: 6px 14px; border-radius: 6px; font-size: 13px; cursor: pointer; transition: background 0.2s; flex-shrink: 0;"
+                      onmouseover="this.style.background='#2b2b2b'"
+                      onmouseout="this.style.background='#1c1c1c'"
+                    >
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="12" cy="12" r="10" />
+                        <path d="M8 12l2.5 2.5L16 9" />
+                      </svg>
+                      View Certificate
+                    </button>
                   </div>
 
                   <div class="project-desc" style="margin-bottom: 6px; color: #a8a8a8;">
@@ -65,6 +82,10 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
                     <div class="single-chip small-chip">Performance Optimization</div>
                     <div class="single-chip small-chip">Audio-Driven Effects</div>
                   </div>
+
+                  <template data-gui-media>
+                    <img src={`${base}/assets/certificates/OJT%20cert/CERTIFICATE%20OF%20COMPLETION_LANCE%20ATENDIDO.png`} alt="OJT / Internship — PurpleBug Inc. certificate" loading="lazy" />
+                  </template>
                 </div>
               </section>
 

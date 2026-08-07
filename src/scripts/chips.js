@@ -3,6 +3,7 @@ const chipDescriptions = {
   // If a chip label is not found here, no tooltip will be shown.
   // Programming Languages
   'Python': 'High-level, versatile language used for backend development, automation, data processing, and scripting.',
+  'Object-Oriented Programming': 'A programming paradigm built around classes, objects, inheritance, and encapsulation to structure and reuse code.',
   'C#': 'Modern, object-oriented language by Microsoft for building desktop apps, web services, and games.',
   'C++': 'Powerful systems-level language for performance-critical applications, game engines, and embedded systems.',
   'PHP': 'Server-side scripting language tailored for web development and dynamic content generation.',
@@ -10,6 +11,7 @@ const chipDescriptions = {
   'HTML': 'Standard markup language for creating structure and content on the web.',
   'JavaScript': 'Essential language for interactive web pages, client-side logic, and full-stack development.',
   'CSS': 'Style sheet language used to control the visual presentation and layout of web pages.',
+  'Java': 'Object-oriented, platform-independent language widely used for enterprise backend systems and API integrations.',
 
   // Backend Development
   'REST API Integration': 'Designing and consuming RESTful web services for communication between client and server.',
@@ -42,6 +44,7 @@ const chipDescriptions = {
   'Android': 'Mobile operating system by Google for smartphones, tablets, and app development.',
   'Windows': 'Desktop operating system by Microsoft for personal computers and enterprise use.',
   'Docker Desktop': 'Desktop application for building, running, and managing containerized applications locally.',
+  'Docker': 'Containerization platform used to package applications and their dependencies for consistent, portable deployment.',
   'Genymotion': 'Android emulator platform for testing and developing mobile applications on a desktop environment.',
   'MobSF': 'Mobile Security Framework — an automated tool for security analysis of Android and iOS applications.',
   'Supabase': 'Open-source Firebase alternative providing backend services like database, authentication, and storage.',

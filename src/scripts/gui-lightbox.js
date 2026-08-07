@@ -81,7 +81,7 @@ function initGuiLightbox() {
       node.classList.add('is-visible');
     };
 
-    const currentEl = mediaContainer.querySelector('img, video');
+    const currentEl = mediaContainer.querySelector('img, video, iframe');
     if (!animate || !currentEl) {
       renderMedia();
       return;

@@ -47,8 +47,8 @@ const { title, type, date, mode, description, cert, membershipCert, credentials,
   )}
   {(cert || membershipCert) && (
     <template data-gui-media>
-      {cert && <img src={`${base}/assets/certs/${cert}`} alt={`${title} certificate`} loading="lazy" />}
-      {membershipCert && <img src={`${base}/assets/certs/${membershipCert}`} alt={`${title} membership certificate`} loading="lazy" />}
+      {cert && <img src={`${base}/assets/certificates/seminar%20certs/${cert}`} alt={`${title} certificate`} loading="lazy" />}
+      {membershipCert && <img src={`${base}/assets/certificates/seminar%20certs/${membershipCert}`} alt={`${title} membership certificate`} loading="lazy" />}
     </template>
   )}
   {skills?.length ? (

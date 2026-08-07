@@ -903,8 +903,22 @@ p {
   transition: opacity 0.35s cubic-bezier(0.4, 0, 0.2, 1), transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.gui-lightbox-media iframe {
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  border: 0;
+  border-radius: 6px;
+  background: #fff;
+  opacity: 0;
+  transform: scale(0.97);
+  transition: opacity 0.35s cubic-bezier(0.4, 0, 0.2, 1), transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 .gui-lightbox-media img.is-visible,
-.gui-lightbox-media video.is-visible {
+.gui-lightbox-media video.is-visible,
+.gui-lightbox-media iframe.is-visible {
   opacity: 1;
   transform: scale(1);
 }
