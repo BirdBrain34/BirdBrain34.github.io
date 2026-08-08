@@ -1,5 +1,5 @@
 ---
-import { ViewTransitions } from 'astro:transitions';
+import { ClientRouter } from 'astro:transitions';
 interface HeaderProps {
   title: string;
 }
@@ -10,7 +10,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <title>{title}</title>
-  <ViewTransitions />
+  <ClientRouter />
   <meta content={title} property="og:title" />
   <meta content={title} property="twitter:title" />
   <meta content="width=device-width, initial-scale=1" name="viewport" />

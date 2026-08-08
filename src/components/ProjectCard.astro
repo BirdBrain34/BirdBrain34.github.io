@@ -60,7 +60,7 @@ const hasGui = (screenshots && screenshots.length > 0) || Boolean(video);
 
   {hasGui && (
     <template data-gui-media>
-      {screenshots && screenshots.map(src => <img src={src} alt={`${title} screenshot`} loading="lazy" />)}
+      {screenshots && screenshots.map(src => <img src={src} alt={`${title} screenshot`} loading="lazy" decoding="async" />)}
       {video && <video src={video} controls muted playsinline preload="metadata"></video>}
     </template>
   )}

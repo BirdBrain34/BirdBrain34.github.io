@@ -4,5 +4,8 @@ export default defineConfig({
   site: 'https://birdbrain34.github.io',
   base: '/',
   integrations: [],
-  viewTransitions: true,
+  prefetch: {
+    prefetchAll: true,
+    defaultStrategy: 'hover',
+  },
 });

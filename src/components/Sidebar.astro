@@ -18,6 +18,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
         <img
           src={`${base}/assets/Atendido.png`}
           loading="eager"
+          fetchpriority="high"
           alt="Lance Atendido"
           class="niv-image"
           style="border-radius: 0; object-fit: contain; background: transparent;"
@@ -123,5 +124,19 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
     document.addEventListener('astro:before-swap', () => {
       if (cleanup) cleanup();
     });
+
+    // `.main` is the app's real scrolling container (see the comment at the
+    // top of scripts/chips.js) — it's not `window`. Astro's client router
+    // reuses/morphs this element across navigations instead of reloading
+    // the page, so it keeps the old scroll position unless we reset it.
+    // We do this on astro:after-swap (fires right after new content lands,
+    // before the transition finishes) rather than astro:page-load, so the
+    // reset happens *during* the transition instead of as a visible jump
+    // right at the end of it.
+    const resetScroll = () => {
+      if (window.location.hash) return; // don't fight in-page anchor links
+      document.querySelector('.main')?.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+    };
+    document.addEventListener('astro:after-swap', resetScroll);
   </script>
 </aside>

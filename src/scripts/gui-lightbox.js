@@ -87,6 +87,13 @@ function initGuiLightbox() {
       return;
     }
 
+    // Respect prefers-reduced-motion: skip the fade-out delay and swap
+    // immediately instead of waiting for the CSS transition to finish.
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      renderMedia();
+      return;
+    }
+
     currentEl.classList.remove('is-visible');
     swapTimeout = window.setTimeout(renderMedia, MEDIA_FADE_MS);
   }

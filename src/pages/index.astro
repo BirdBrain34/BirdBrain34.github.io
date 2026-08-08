@@ -53,15 +53,15 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
               </a>
             </div>
             <template data-gui-media="cv">
-              <img src={`${base}/assets/CV/Atendido_CV_page_1.png`} alt="CV page 1" loading="lazy" />
-              <img src={`${base}/assets/CV/Atendido_CV_page_2.png`} alt="CV page 2" loading="lazy" />
+              <img src={`${base}/assets/CV/Atendido_CV_page_1.png`} alt="CV page 1" loading="lazy" decoding="async" />
+              <img src={`${base}/assets/CV/Atendido_CV_page_2.png`} alt="CV page 2" loading="lazy" decoding="async" />
             </template>
           </main>
           <div class="projects-section">
             <a href={`${base}/skills/`} class="projects-container">
               <div class="single-projects-category">
                 <div class="projects-category-image-container">
-                  <img src={`${base}/assets/skills-icon.png`} loading="lazy" alt="Skills" class="projects-category-image" />
+                  <img src={`${base}/assets/skills-icon.png`} loading="lazy" decoding="async" alt="Skills" class="projects-category-image" />
                 </div>
               </div>
               <div class="single-projects-content">
@@ -81,7 +81,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
             <a href={`${base}/personal-projects/`} class="projects-container">
               <div class="single-projects-category">
                 <div class="projects-category-image-container">
-                  <img src={`${base}/assets/project-icon.png`} loading="lazy" alt="Projects" class="projects-category-image" style="filter: invert(1) brightness(2);" />
+                  <img src={`${base}/assets/project-icon.png`} loading="lazy" decoding="async" alt="Projects" class="projects-category-image" style="filter: invert(1) brightness(2);" />
                 </div>
               </div>
               <div class="single-projects-content">
@@ -105,6 +105,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
                   <img
                     src={`${base}/assets/experience.png`}
                     loading="lazy"
+                    decoding="async"
                     alt="Experience"
                     class="projects-category-image"
                   style="object-fit: contain; width: 100px; height: 100px; filter: invert(1) brightness(2);"
@@ -125,7 +126,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
             <a href={`${base}/achievements/`} class="projects-container">
               <div class="single-projects-category">
                 <div class="projects-category-image-container devops-img">
-                  <img src={`${base}/assets/achievements-icon.png`} loading="lazy" alt="Achievements" class="projects-category-image" />
+                  <img src={`${base}/assets/achievements-icon.png`} loading="lazy" decoding="async" alt="Achievements" class="projects-category-image" />
                 </div>
               </div>
               <div class="single-projects-content">
@@ -143,7 +144,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
             <a href={`${base}/seminars/`} class="projects-container">
               <div class="single-projects-category">
                 <div class="projects-category-image-container">
-                  <img src={`${base}/assets/seminars-icon.png`} loading="lazy" alt="Seminars" class="projects-category-image" style="filter: invert(1) brightness(2);" />
+                  <img src={`${base}/assets/seminars-icon.png`} loading="lazy" decoding="async" alt="Seminars" class="projects-category-image" style="filter: invert(1) brightness(2);" />
                 </div>
               </div>
               <div class="single-projects-content">
