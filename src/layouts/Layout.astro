@@ -1,11 +1,11 @@
 ---
 import Header from '../components/Header.astro';
 import Sidebar from '../components/Sidebar.astro';
-const { title, selectedItem } = Astro.props;
+const { title, selectedItem, description } = Astro.props;
 ---
 <!DOCTYPE html>
 <html>
-  <Header title={title} />
+  <Header title={title} description={description} />
   <body>
     <div class="content">
       <Sidebar selectedItem={selectedItem} />

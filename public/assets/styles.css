@@ -539,6 +539,20 @@ p {
   border-color: #353535;
 }
 
+.sidebar-contact-links a {
+  transition: transform 180ms ease, color 180ms ease;
+}
+
+.sidebar-contact-links a:hover {
+  transform: translateY(-2px);
+  color: #fff;
+}
+
+.sidebar-contact-links a:hover svg {
+  transform: scale(1.15);
+  filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.2));
+}
+
 .projects-container {
   grid-column-gap: 24px;
   grid-row-gap: 24px;

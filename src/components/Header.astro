@@ -2,17 +2,28 @@
 import { ClientRouter } from 'astro:transitions';
 interface HeaderProps {
   title: string;
+  description?: string;
 }
-const { title } = Astro.props as HeaderProps;
+const {
+  title,
+  description = "Portfolio of Lance Atendido — IT student and aspiring game & software developer.",
+} = Astro.props as HeaderProps;
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const ogImage = new URL(`${base}/assets/Atendido.png`, Astro.site).toString();
 ---
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <title>{title}</title>
   <ClientRouter />
+  <meta name="description" content={description} />
   <meta content={title} property="og:title" />
+  <meta content={description} property="og:description" />
+  <meta content="website" property="og:type" />
+  <meta content={ogImage} property="og:image" />
   <meta content={title} property="twitter:title" />
+  <meta content={description} name="twitter:description" />
+  <meta content="summary" name="twitter:card" />
   <meta content="width=device-width, initial-scale=1" name="viewport" />
   <link href={`${base}/assets/styles.css`} rel="stylesheet" type="text/css" />
   <link href="https://fonts.googleapis.com/" rel="preconnect" />

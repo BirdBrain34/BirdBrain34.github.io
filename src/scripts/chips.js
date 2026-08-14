@@ -4,6 +4,7 @@ const chipDescriptions = {
   // Programming Languages
   'Python': 'High-level, versatile language used for backend development, automation, data processing, and scripting.',
   'Object-Oriented Programming': 'A programming paradigm built around classes, objects, inheritance, and encapsulation to structure and reuse code.',
+  'OOP': 'Object-oriented programming — building software around classes, objects, inheritance, and encapsulation to structure and reuse code.',
   'C#': 'Modern, object-oriented language by Microsoft for building desktop apps, web services, and games.',
   'C++': 'Powerful systems-level language for performance-critical applications, game engines, and embedded systems.',
   'PHP': 'Server-side scripting language tailored for web development and dynamic content generation.',
@@ -71,6 +72,7 @@ const chipDescriptions = {
   'Audio Feedback': 'Playing synchronized sounds and effects in response to user actions and game events.',
 
   // Index page chips (small-chip variants - matching by text)
+  'AR Game Dev': 'Building interactive augmented reality filters and game mechanics as an intern at PurpleBug Inc.',
   'PurpleBug Inc.': 'Digital agency where I gained hands-on experience in AR development and interactive media.',
   'Effect House (TikTok AR)': 'TikTok\'s AR platform for creating interactive augmented reality effects and filters.',
   'Interactive AR Filters': 'Augmented reality filters that respond to user actions, facial expressions, and environment.',
