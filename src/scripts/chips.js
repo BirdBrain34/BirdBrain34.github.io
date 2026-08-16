@@ -131,8 +131,14 @@ const chipDescriptions = {
  * Runs after Astro finishes loading the page.
  * This is important because Astro uses client-side navigation.
  */
+let cleanup;
 document.addEventListener('astro:page-load', () => {
-  initChipTooltips();
+  if (cleanup) cleanup();
+  cleanup = initChipTooltips();
+});
+
+document.addEventListener('astro:before-swap', () => {
+  if (cleanup) cleanup();
 });
 
 function initChipTooltips() {
@@ -197,55 +203,67 @@ function initChipTooltips() {
   scrollContainer?.addEventListener('scroll', onScroll, { passive: true });
   window.addEventListener('resize', onResize);
 
-  // Attach click listeners to all chips on the page.
+  // Set cursor styling once at init (kept as a visual hint without per-chip listeners).
   chips.forEach(chip => {
     // Skip chips inside anchor links to avoid interfering with normal navigation.
     if (chip.closest('a[href]')) return;
 
     // Improve affordance that the chip is clickable.
     chip.style.cursor = 'pointer';
-
-    chip.addEventListener('click', (e) => {
-      // Stop propagation so the document-level "outside click" handler doesn't close it immediately.
-      e.stopPropagation();
-
-      // Remove any existing tooltip before showing a new one.
-      if (activeTooltip) {
-        activeTooltip.remove();
-        activeTooltip = null;
-        activeChip = null;
-      }
-
-      // Match chip label to tooltip description.
-      const text = chip.textContent.trim();
-      const description = chipDescriptions[text];
-
-      // If no description exists for this label, do nothing.
-      if (!description) return;
-
-      // Create tooltip element.
-      const tooltip = document.createElement('div');
-      tooltip.className = 'chip-tooltip';
-      tooltip.textContent = description;
-      tooltip.setAttribute('data-chip-tooltip', '');
-
-      // Use fixed positioning so scroll doesn't move it away from the viewport anchor.
-      tooltip.style.position = 'fixed';
-
-      // Add tooltip to DOM and mark current active tooltip/chip.
-      document.body.appendChild(tooltip);
-      activeTooltip = tooltip;
-      activeChip = chip;
-
-      // Position it immediately (before any animation class is toggled).
-      updatePosition();
-
-      // Next frame: add "visible" class to trigger any CSS transitions.
-      requestAnimationFrame(() => {
-        tooltip.classList.add('visible');
-      });
-    });
   });
+
+  // A single delegated click listener handles every chip on the page instead
+  // of attaching a separate listener per chip — the behavior is identical
+  // (chips inside anchor links are skipped; outside clicks still close).
+  const onChipClick = (e) => {
+    // Resolve the clicked element to the nearest chip (if any).
+    const chip = e.target.closest('.single-chip');
+
+    // Skip chips inside anchor links to avoid interfering with normal navigation.
+    if (!chip || chip.closest('a[href]')) return;
+
+    // Stop propagation so the document-level "outside click" handler doesn't close it immediately.
+    e.stopPropagation();
+
+    // Remove any existing tooltip before showing a new one.
+    if (activeTooltip) {
+      activeTooltip.remove();
+      activeTooltip = null;
+      activeChip = null;
+    }
+
+    // Match chip label to tooltip description.
+    const text = chip.textContent.trim();
+    const description = chipDescriptions[text];
+
+    // If no description exists for this label, do nothing.
+    if (!description) return;
+
+    // Create tooltip element.
+    const tooltip = document.createElement('div');
+    tooltip.className = 'chip-tooltip';
+    tooltip.textContent = description;
+    tooltip.setAttribute('data-chip-tooltip', '');
+
+    // Use fixed positioning so scroll doesn't move it away from the viewport anchor.
+    tooltip.style.position = 'fixed';
+
+    // Add tooltip to DOM and mark current active tooltip/chip.
+    document.body.appendChild(tooltip);
+    activeTooltip = tooltip;
+    activeChip = chip;
+
+    // Position it immediately (before any animation class is toggled).
+    updatePosition();
+
+    // Next frame: add "visible" class to trigger any CSS transitions.
+    requestAnimationFrame(() => {
+      tooltip.classList.add('visible');
+    });
+  };
+
+  // Global click listener that opens the tooltip for the clicked chip.
+  document.addEventListener('click', onChipClick);
 
   /**
    * Closes the active tooltip when the user clicks outside a chip and outside the tooltip itself.
@@ -288,6 +306,7 @@ function initChipTooltips() {
   // Cleanup closure (useful if init is later enhanced to support teardown on navigation).
   return () => {
     // Remove event listeners.
+    document.removeEventListener('click', onChipClick);
     document.removeEventListener('click', closeHandler);
     window.removeEventListener('scroll', onScroll);
     scrollContainer?.removeEventListener('scroll', onScroll);

@@ -1,6 +1,10 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import { getImage } from '../assets/images';
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const cvPage1 = getImage("Atendido_CV_page_1.png");
+const cvPage2 = getImage("Atendido_CV_page_2.png");
 ---
 
 <Layout title="Lance Atendido — Game & Software Developer" selectedItem="home" description="Portfolio of Lance Atendido — IT student and aspiring game & software developer with hands-on AR development, REST API, and full-stack project experience.">
@@ -24,9 +28,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
                 data-gui-trigger
                 data-gui-media="cv"
                 data-gui-title="Curriculum Vitae"
-                style="display: inline-flex; align-items: center; gap: 8px; background: #1c1c1c; border: 1px solid #333; color: #fff; padding: 10px 20px; border-radius: 8px; font-size: 15px; cursor: pointer; transition: background 0.2s;"
-                onmouseover="this.style.background='#2b2b2b'"
-                onmouseout="this.style.background='#1c1c1c'"
+                class="btn-dark-outline btn-dark-outline-lg"
               >
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
                   <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
@@ -40,9 +42,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
               <a
                 href={`${base}/assets/CV/Atendido_CV.pdf`}
                 download="Atendido_CV.pdf"
-                style="display: inline-flex; align-items: center; gap: 8px; background: #1c1c1c; border: 1px solid #333; color: #fff; padding: 10px 20px; border-radius: 8px; font-size: 15px; cursor: pointer; text-decoration: none; transition: background 0.2s;"
-                onmouseover="this.style.background='#2b2b2b'"
-                onmouseout="this.style.background='#1c1c1c'"
+                class="btn-dark-outline btn-dark-outline-lg"
               >
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
                   <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
@@ -53,15 +53,15 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
               </a>
             </div>
             <template data-gui-media="cv">
-              <img src={`${base}/assets/CV/Atendido_CV_page_1.png`} alt="CV page 1" loading="lazy" decoding="async" />
-              <img src={`${base}/assets/CV/Atendido_CV_page_2.png`} alt="CV page 2" loading="lazy" decoding="async" />
+              <Image src={cvPage1} alt="CV page 1" loading="lazy" decoding="async" />
+              <Image src={cvPage2} alt="CV page 2" loading="lazy" decoding="async" />
             </template>
           </main>
           <div class="projects-section">
             <a href={`${base}/skills/`} class="projects-container">
               <div class="single-projects-category">
                 <div class="projects-category-image-container">
-                  <img src={`${base}/assets/skills-icon.png`} loading="lazy" decoding="async" alt="Skills" class="projects-category-image" />
+                  <img src={`${base}/assets/skills-icon.png`} width="168" height="185" loading="lazy" decoding="async" alt="Skills" class="projects-category-image" />
                 </div>
               </div>
               <div class="single-projects-content">
@@ -81,7 +81,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
             <a href={`${base}/personal-projects/`} class="projects-container">
               <div class="single-projects-category">
                 <div class="projects-category-image-container">
-                  <img src={`${base}/assets/project-icon.png`} loading="lazy" decoding="async" alt="Projects" class="projects-category-image" style="filter: invert(1) brightness(2);" />
+                  <img src={`${base}/assets/project-icon.png`} width="512" height="512" loading="lazy" decoding="async" alt="Projects" class="projects-category-image" style="filter: invert(1) brightness(2);" />
                 </div>
               </div>
               <div class="single-projects-content">
@@ -104,6 +104,8 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
                 <div class="projects-category-image-container">
                   <img
                     src={`${base}/assets/experience.png`}
+                    width="1024"
+                    height="736"
                     loading="lazy"
                     decoding="async"
                     alt="Experience"
@@ -127,7 +129,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
             <a href={`${base}/achievements/`} class="projects-container">
               <div class="single-projects-category">
                 <div class="projects-category-image-container devops-img">
-                  <img src={`${base}/assets/achievements-icon.png`} loading="lazy" decoding="async" alt="Achievements" class="projects-category-image" />
+                  <img src={`${base}/assets/achievements-icon.png`} width="840" height="859" loading="lazy" decoding="async" alt="Achievements" class="projects-category-image" />
                 </div>
               </div>
               <div class="single-projects-content">
@@ -145,7 +147,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
             <a href={`${base}/seminars/`} class="projects-container">
               <div class="single-projects-category">
                 <div class="projects-category-image-container">
-                  <img src={`${base}/assets/seminars-icon.png`} loading="lazy" decoding="async" alt="Seminars" class="projects-category-image" style="filter: invert(1) brightness(2);" />
+                  <img src={`${base}/assets/seminars-icon.png`} width="122" height="128" loading="lazy" decoding="async" alt="Seminars" class="projects-category-image" style="filter: invert(1) brightness(2);" />
                 </div>
               </div>
               <div class="single-projects-content">

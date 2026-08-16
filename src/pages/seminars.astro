@@ -1,13 +1,14 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import SeminarCard from "../components/SeminarCard.astro";
+import { getImage } from '../assets/images';
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 
 <Layout title="Seminars | Lance Atendido" selectedItem="seminars" description="Seminars and professional development attended by Lance Atendido in cybersecurity, cloud-native engineering, and emerging tech.">
           <div class="back-nav-container">
             <a href={`${base}/`} class="back-nav-button w-inline-block">
-              <img src={`${base}/assets/back.svg`} loading="lazy" alt="" class="back-nav-img" />
+              <img src={`${base}/assets/back.svg`} width="24" height="24" loading="lazy" alt="" class="back-nav-img" />
               <div>Back</div>
             </a>
           </div>
@@ -23,9 +24,8 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
                   date="May 26, 2026"
                   mode="Webinar via Zoom"
                   description="Traced the evolution of blockchain technology from its 1991 origins through Bitcoin's 2008 debut, covering how transactions are validated across a distributed network and how to spot common cryptocurrency scams."
-                  cert="crypto-blockchain-101.png"
+                  cert={getImage("crypto-blockchain-101.png")}
                   skills={["Blockchain", "Cryptocurrency", "Web3", "Decentralization"]}
-                  base={base}
                 />
                 <SeminarCard
                   title="Connected but Protected: Strengthening Network Security in the IoT Era"
@@ -33,9 +33,8 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
                   date="May 27, 2026"
                   mode="Webinar via Google Meet"
                   description="Covered the most common IoT security threats — weak passwords, malware, unauthorized access, and DDoS attacks — along with defensive practices like multi-factor authentication, firmware updates, encryption, and network segmentation."
-                  cert="iot-network-security.png"
+                  cert={getImage("iot-network-security.png")}
                   skills={["IoT Security", "Network Security", "Multi-Factor Authentication", "Network Segmentation"]}
-                  base={base}
                 />
                 <SeminarCard
                   title="Learning Advocate 2026 Series: A.I. Behind Social Media"
@@ -43,9 +42,8 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
                   date="May 29, 2026"
                   mode="Webinar via Google Meet"
                   description="Explored how machine learning, computer vision, and recommendation engines shape personalized social media feeds, alongside the ethical tradeoffs of data privacy, algorithmic bias, and misinformation."
-                  cert="ai-behind-social-media.png"
+                  cert={getImage("ai-behind-social-media.png")}
                   skills={["Machine Learning", "Computer Vision", "Natural Language Processing", "AI Ethics"]}
-                  base={base}
                 />
               </div>
             </section>
@@ -59,11 +57,10 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
                   date="June 20, 2026"
                   mode="Face-to-face — Global Classroom, Einstein Building, MMCL"
                   description="Framed cybersecurity as a leadership discipline rather than a purely technical one, presenting a staged model for digital transformation and emphasizing the value of professional networks and a well-maintained portfolio."
-                  cert="beyond-the-breach.png"
-                  membershipCert="cybersocph-membership.png"
+                  cert={getImage("beyond-the-breach.png")}
+                  membershipCert={getImage("cybersocph-membership.png")}
                   credentials={["CyberSocPH Member"]}
                   skills={["Cybersecurity Leadership", "Digital Transformation", "Professional Networking"]}
-                  base={base}
                 />
                 <SeminarCard
                   title="Beyond the Code: Next-Gen Skills for the Cloud-Native Era"
@@ -71,9 +68,8 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
                   date="July 27, 2026"
                   mode="Face-to-face — CCIS Week, MMCL"
                   description="Focused on modern cloud engineering practices, covering Zero Trust Architecture, Kubernetes-based container orchestration, hub-and-spoke network topology, and Infrastructure as Code pipelines built with Terraform."
-                  cert="beyond-the-code.png"
+                  cert={getImage("beyond-the-code.png")}
                   skills={["Zero Trust Architecture", "Kubernetes", "Infrastructure as Code", "Terraform"]}
-                  base={base}
                 />
               </div>
             </section>

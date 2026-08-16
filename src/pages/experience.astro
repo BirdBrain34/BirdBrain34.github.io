@@ -1,14 +1,17 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Experience from '../components/Experience.astro';
+import { Image } from 'astro:assets';
+import { getImage } from '../assets/images';
 
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const ojtCert = getImage("CERTIFICATE OF COMPLETION_LANCE ATENDIDO.png");
 ---
 
 <Layout title="Experience | Lance Atendido" selectedItem="experience" description="Professional experience of Lance Atendido, including an AR game development internship at PurpleBug Inc. building interactive TikTok Effect House filters.">
           <div class="back-nav-container">
             <a href={`${base}/`} class="back-nav-button w-inline-block">
-              <img src={`${base}/assets/back.svg`} loading="lazy" decoding="async" alt="" class="back-nav-img" />
+              <img src={`${base}/assets/back.svg`} width="24" height="24" loading="lazy" decoding="async" alt="" class="back-nav-img" />
               <div>Back</div>
             </a>
           </div>
@@ -51,12 +54,10 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
                     </div>
                     <button
                       type="button"
-                      class="gui-trigger"
+                      class="gui-trigger btn-dark-outline"
                       data-gui-trigger
                       data-gui-title="OJT / Internship — PurpleBug Inc."
-                      style="display: inline-flex; align-items: center; gap: 6px; background: #1c1c1c; border: 1px solid #333; color: #fff; padding: 6px 14px; border-radius: 6px; font-size: 13px; cursor: pointer; transition: background 0.2s; flex-shrink: 0;"
-                      onmouseover="this.style.background='#2b2b2b'"
-                      onmouseout="this.style.background='#1c1c1c'"
+                      style="flex-shrink: 0;"
                     >
                       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
                         <circle cx="12" cy="12" r="10" />
@@ -84,7 +85,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
                   </div>
 
                   <template data-gui-media>
-                    <img src={`${base}/assets/certificates/OJT%20cert/CERTIFICATE%20OF%20COMPLETION_LANCE%20ATENDIDO.png`} alt="OJT / Internship — PurpleBug Inc. certificate" loading="lazy" decoding="async" />
+                    <Image src={ojtCert} alt="OJT / Internship — PurpleBug Inc. certificate" loading="lazy" decoding="async" />
                   </template>
                 </div>
               </section>

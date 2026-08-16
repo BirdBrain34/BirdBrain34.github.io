@@ -1,5 +1,7 @@
 ---
-const { title, type, date, mode, description, cert, membershipCert, credentials, skills, base } = Astro.props;
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+const { title, type, date, mode, description, cert, membershipCert, credentials, skills } = Astro.props;
 ---
 
 <div class="single-item">
@@ -19,12 +21,9 @@ const { title, type, date, mode, description, cert, membershipCert, credentials,
         {cert && (
           <button
             type="button"
-            class="gui-trigger"
+            class="gui-trigger btn-dark-outline"
             data-gui-trigger
             data-gui-title={title}
-            style="display: inline-flex; align-items: center; gap: 6px; background: #1c1c1c; border: 1px solid #333; color: #fff; padding: 6px 14px; border-radius: 6px; font-size: 13px; cursor: pointer; transition: background 0.2s;"
-            onmouseover="this.style.background='#2b2b2b'"
-            onmouseout="this.style.background='#1c1c1c'"
           >
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
               <circle cx="12" cy="12" r="10" />
@@ -47,8 +46,8 @@ const { title, type, date, mode, description, cert, membershipCert, credentials,
   )}
   {(cert || membershipCert) && (
     <template data-gui-media>
-      {cert && <img src={`${base}/assets/certificates/seminar%20certs/${cert}`} alt={`${title} certificate`} loading="lazy" decoding="async" />}
-      {membershipCert && <img src={`${base}/assets/certificates/seminar%20certs/${membershipCert}`} alt={`${title} membership certificate`} loading="lazy" decoding="async" />}
+      {cert && <Image src={cert} alt={`${title} certificate`} loading="lazy" decoding="async" />}
+      {membershipCert && <Image src={membershipCert} alt={`${title} membership certificate`} loading="lazy" decoding="async" />}
     </template>
   )}
   {skills?.length ? (

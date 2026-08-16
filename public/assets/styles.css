@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;400;600&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap');
-
 html {
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
@@ -69,18 +67,6 @@ img {
 
 .w-inline-block {
   max-width: 100%;
-  display: inline-block;
-}
-
-.w-button {
-  color: #fff;
-  line-height: inherit;
-  cursor: pointer;
-  background-color: #3898ec;
-  border: 0;
-  border-radius: 0;
-  padding: 9px 15px;
-  text-decoration: none;
   display: inline-block;
 }
 
@@ -351,22 +337,30 @@ p {
   line-height: 26px;
 }
 
-.button {
+.btn-dark-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #1c1c1c;
+  border: 1px solid #333;
   color: #fff;
-  background-color: #1c1c1c;
-  border: 1px solid #363636;
-  border-right-color: #353535;
-  border-radius: 8px;
-  padding: 12px 20px;
-  font-size: 14px;
-  font-weight: 500;
-  line-height: 26px;
-  transition: all 40ms;
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-size: 13px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.2s;
 }
 
-.button:hover {
-  background-color: #202020;
-  box-shadow: 0 2px 4px rgba(8, 8, 8, 0.82);
+.btn-dark-outline:hover {
+  background: #2b2b2b;
+}
+
+.btn-dark-outline-lg {
+  gap: 8px;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 15px;
 }
 
 .fold-content {
@@ -483,6 +477,7 @@ p {
 
 .nav-link-image {
   width: 24px;
+  height: auto;
   opacity: 0.48;
 }
 
@@ -631,6 +626,7 @@ p {
 
 .back-nav-img {
   width: 18px;
+  height: auto;
   transition: transform 180ms ease;
 }
 
@@ -741,7 +737,7 @@ p {
 
   .navbar-icon {
     width: 32px;
-    height: 32px;
+    height: auto;
     color: #fff;
     font-size: 32px;
   }

@@ -17,6 +17,8 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
       <div class="niv-data">
         <img
           src={`${base}/assets/Atendido.png`}
+          width="88"
+          height="107"
           loading="eager"
           fetchpriority="high"
           alt="Lance Atendido"
@@ -55,7 +57,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
         class={`nav-link-container w-inline-block ${selectedItem === 'home' ? 'w--current' : ''}`}
       >
         <div class="nav-icon-slot">
-          <img src={`${base}/assets/home.svg`} loading="eager" alt="" class="nav-link-image" />
+          <img src={`${base}/assets/home.svg`} width="48" height="48" loading="eager" alt="" class="nav-link-image" />
         </div>
         <div>About Me</div>
       </a>
@@ -66,7 +68,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
         aria-current={selectedItem === 'skills' ? 'page' : undefined}
       >
         <div class="nav-icon-slot">
-          <img src={`${base}/assets/skills-icon.png`} loading="eager" alt="" class="nav-link-image" />
+          <img src={`${base}/assets/skills-icon.png`} width="168" height="185" loading="eager" alt="" class="nav-link-image" />
         </div>
         <div>Skills</div>
       </a>
@@ -76,7 +78,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
         class={`nav-link-container w-inline-block ${selectedItem === 'personal-projects' ? 'w--current' : ''}`}
       >
         <div class="nav-icon-slot">
-          <img src={`${base}/assets/project-icon.png`} loading="eager" alt="" class="nav-link-image" style="filter: invert(1) brightness(2);" />
+          <img src={`${base}/assets/project-icon.png`} width="512" height="512" loading="eager" alt="" class="nav-link-image" style="filter: invert(1) brightness(2);" />
         </div>
         <div>Projects</div>
       </a>
@@ -89,6 +91,8 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
         <div class="nav-icon-slot">
           <img
             src={`${base}/assets/experience.png`}
+            width="1024"
+            height="736"
             loading="eager"
             alt=""
             class="nav-link-image experience-nav-icon"
@@ -103,7 +107,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
         class={`nav-link-container w-inline-block ${selectedItem === 'achievements' ? 'w--current' : ''}`}
       >
         <div class="nav-icon-slot">
-          <img src={`${base}/assets/achievements-icon.png`} loading="eager" alt="" class="nav-link-image" />
+          <img src={`${base}/assets/achievements-icon.png`} width="840" height="859" loading="eager" alt="" class="nav-link-image" />
         </div>
         <div>Achievements</div>
       </a>
@@ -114,7 +118,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
         aria-current={selectedItem === 'seminars' ? 'page' : undefined}
       >
         <div class="nav-icon-slot">
-          <img src={`${base}/assets/seminars-icon.png`} loading="eager" alt="" class="nav-link-image" style="filter: invert(1) brightness(2);" />
+          <img src={`${base}/assets/seminars-icon.png`} width="122" height="128" loading="eager" alt="" class="nav-link-image" style="filter: invert(1) brightness(2);" />
         </div>
         <div>Seminars</div>
       </a>
@@ -127,7 +131,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
       role="button"
       tabindex="0"
     >
-      <img src={`${base}/assets/menu.svg`} loading="eager" alt="" class="navbar-icon" />
+      <img src={`${base}/assets/menu.svg`} width="40" height="40" loading="eager" alt="" class="navbar-icon" />
     </div>
   </div>
 
